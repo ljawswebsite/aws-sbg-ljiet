@@ -1509,6 +1509,7 @@ p {
   color: #8C9BAB;
   font-size: 0.9rem;
   line-height: 1.6;
+  transition: color 0.2s ease;
 }
 
 .footer-address svg {
@@ -1517,6 +1518,15 @@ p {
   flex-shrink: 0;
   color: var(--orange);
   margin-top: 2px;
+}
+
+.footer-address-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-address-link:hover .footer-address {
+  color: var(--paper);
 }
 
 .footer-bottom {
