@@ -613,349 +613,405 @@ p {
   flex-wrap: wrap;
 }
 
-/* Event highlight card sitting next to hero content */
+/* ─── PREMIUM EVENT HIGHLIGHT CARD (White-Orange) ──────────────────────────── */
 .hero-event-card {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-m);
+  background: #FFFFFF;
+  border: 1px solid rgba(255, 153, 0, 0.25);
+  border-radius: 20px;
   overflow: hidden;
   animation: fade-up 0.7s ease 0.1s both;
-  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.4s ease;
   width: 100%;
   max-width: 620px;
   justify-self: end;
+  position: relative;
+  box-shadow: 0 16px 32px -12px rgba(255, 153, 0, 0.15), 0 4px 12px rgba(0,0,0,0.03);
+  color: var(--ink);
+}
+
+.hero-event-card::before {
+  content: "";
+  position: absolute;
+  top: -50%; right: -50%;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle, rgba(255,153,0,0.06) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .hero-event-card:hover {
-  border-color: rgba(255, 153, 0, 0.4);
-  box-shadow: 0 16px 36px -12px rgba(15, 27, 42, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px -15px rgba(255, 153, 0, 0.25), 0 8px 16px rgba(0,0,0,0.04);
+  border-color: rgba(255, 153, 0, 0.5);
 }
 
-  .hec-img-wrapper {
-    aspect-ratio: 4/3;
-    overflow: hidden;
-  }
+.hec-img-wrapper {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid rgba(255, 153, 0, 0.1);
+}
 
-  .hec-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.hec-img-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, rgba(255, 255, 255, 0.95) 100%);
+  pointer-events: none;
+}
 
-  .hec-body {
-    padding: var(--card-pad);
-  }
+.hec-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
 
-  .hec-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 14px;
-  }
+.hero-event-card:hover .hec-img-wrapper img {
+  transform: scale(1.05);
+}
 
-  .tag {
-    padding: 5px 11px;
-    border-radius: 5px;
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    font-weight: 500;
-    background: #FFF0DA;
-    color: var(--orange-dark);
-  }
+.hec-body {
+  padding: 28px 32px 32px;
+  position: relative;
+  z-index: 1;
+}
 
-  .hec-date {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--faint);
-  }
+.hec-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
 
-  .hec-body h3 {
-    margin-bottom: 10px;
-  }
+.tag.premium-tag {
+  background: linear-gradient(135deg, #FF9900, #EA580C);
+  color: #FFFFFF;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(255, 153, 0, 0.25);
+  white-space: nowrap;
+  display: inline-block;
+}
 
-  .hec-meta {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-top: 18px;
-    padding-top: 18px;
-    border-top: 1px solid var(--line);
-  }
+.hec-date {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--faint);
+  font-weight: 600;
+}
 
-  .hec-meta span {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 0.84rem;
-    color: var(--muted);
-  }
+.hec-body h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
 
-  .hec-meta svg {
-    width: 15px;
-    height: 15px;
-    color: var(--blue);
-  }
+.hec-body > p {
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
 
-  .hec-speaker {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: 18px;
-    padding: 12px;
-    background: var(--paper-alt);
-    border-radius: var(--radius-s);
-  }
+/* ─── PREMIUM EVENT POSTER BADGES ──────────────────────────── */
+.event-poster-badges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
 
-  .hec-speaker-avatar {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: var(--navy);
-    color: var(--orange);
-    display: grid;
-    place-items: center;
-    font-family: var(--font-mono);
-    font-weight: 600;
-    font-size: 0.85rem;
-    flex-shrink: 0;
-  }
+.ep-badge {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  background: var(--paper-alt);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
 
-  .hec-speaker-info strong {
-    display: block;
-    font-size: 0.92rem;
-    color: var(--ink);
-  }
+.ep-badge:hover {
+  transform: translateY(-3px);
+  background: #FFF9F2;
+  border-color: rgba(255, 153, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 153, 0, 0.1);
+}
 
-  .hec-speaker-info span {
-    font-size: 0.8rem;
-    color: var(--blue);
-  }
+.ep-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  background: rgba(255, 153, 0, 0.12);
+  border-radius: 8px;
+}
 
-  /* ─── EVENT POSTER BADGES (Matching Event.jpeg flyer) ────── */
+.ep-icon svg {
+  width: 18px;
+  height: 18px;
+  color: #DE8600;
+}
+
+.ep-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.3;
+}
+
+.ep-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--faint);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.ep-val {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.ep-sub {
+  font-size: 0.75rem;
+  color: var(--faint);
+  margin-top: 2px;
+}
+
+.ep-sub.venue-sub {
+  font-size: 0.75rem;
+  color: #DE8600;
+  font-weight: 600;
+}
+
+/* ─── PREMIUM SPEAKERS SECTION ─────────────────────────────── */
+.speakers-section {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.speakers-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--faint);
+  margin-bottom: 16px;
+}
+
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.speaker-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 14px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  min-width: 0;
+}
+
+.speaker-box:hover {
+  background: #FFF9F2;
+  border-color: rgba(255, 153, 0, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 153, 0, 0.12);
+}
+
+.speaker-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.speaker-linkedin {
+  width: 16px;
+  height: 16px;
+  color: #0A66C2;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.speaker-box:hover .speaker-linkedin {
+  transform: scale(1.15);
+  color: #004182;
+}
+
+.event-card .speakers-section {
+  margin: 14px 0 16px 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.event-card .speakers-grid {
+  grid-template-columns: 1fr;
+  gap: 7px;
+}
+
+/* ─── PREMIUM INVITE BOX ───────────────────────────────────── */
+.hec-invite {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 18px 20px;
+  background: linear-gradient(135deg, #FFF6E8, #FFFAF2);
+  border: 1px solid rgba(255, 153, 0, 0.2);
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hec-invite::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  20% { left: 200%; }
+  100% { left: 200%; }
+}
+
+.hec-invite:hover {
+  border-color: rgba(255, 153, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(255, 153, 0, 0.15);
+}
+
+.hec-invite-text strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #C2410C;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.hec-invite-text span {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.hec-invite-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FF9900;
+  color: #FFFFFF;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);
+}
+
+.hec-invite-btn:hover {
+  transform: scale(1.15) rotate(-10deg);
+  background: #DE8600;
+  box-shadow: 0 6px 16px rgba(255, 153, 0, 0.4);
+}
+
+.hec-invite-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ─── EVENT SECTION CARD OVERRIDES ─────────────────────────── */
+.event-card.premium-event-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(255, 153, 0, 0.25);
+  box-shadow: 0 8px 24px rgba(255, 153, 0, 0.08);
+  color: var(--ink);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.event-card.premium-event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(255, 153, 0, 0.15);
+  border-color: rgba(255, 153, 0, 0.4);
+}
+
+.event-card.premium-event-card .event-meta-row .hec-date,
+.event-card.premium-event-card .event-footer span {
+  color: var(--muted);
+}
+
+.event-card.premium-event-card h3 {
+  color: var(--ink);
+}
+
+.event-card.premium-event-card p {
+  color: var(--muted);
+}
+
+.event-card.premium-event-card .speaker-box {
+  background: var(--paper-alt);
+  border: 1px solid var(--line);
+}
+
+.event-card.premium-event-card .speaker-box:hover {
+  background: #FFF9F2;
+  border-color: rgba(255, 153, 0, 0.3);
+}
+
+.event-card.premium-event-card .event-footer {
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 640px) {
   .event-poster-badges {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 12px;
-    margin-top: 18px;
-    padding-top: 16px;
-    border-top: 1px solid var(--line);
-  }
-
-  .ep-badge {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 12px 14px;
-    background: #0f172a;
-    border: 1px solid rgba(255, 153, 0, 0.45);
-    border-radius: 8px;
-    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.14);
-    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .ep-badge:hover {
-    border-color: #FF9900;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(255, 153, 0, 0.2);
-  }
-
-  .ep-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  .ep-icon svg {
-    width: 22px;
-    height: 22px;
-    color: #FF9900;
-  }
-
-  .ep-text {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    line-height: 1.25;
-  }
-
-  .ep-label {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: #94A3B8;
-    text-transform: uppercase;
-    font-family: var(--font-mono);
-  }
-
-  .ep-val {
-    font-size: 0.88rem;
-    font-weight: 800;
-    color: #FF9900;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .ep-sub {
-    font-size: 0.72rem;
-    font-weight: 600;
-    color: #E2E8F0;
-    display: block;
-    margin-top: 1px;
-  }
-
-  .ep-sub.venue-sub {
-    font-size: 0.72rem;
-    color: #CBD5E1;
-    font-weight: 500;
-    white-space: normal;
-    word-break: break-word;
-  }
-
-  .hec-invite {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-top: 16px;
-    padding: 13px 18px;
-    background: #FFF8EE;
-    border: 1px solid rgba(255, 153, 0, 0.45);
-    border-radius: 8px;
-  }
-
-  .hec-invite-text strong {
-    display: block;
-    font-size: 0.88rem;
-    font-weight: 800;
-    color: #C2410C;
-    letter-spacing: 0.04em;
-  }
-
-  .hec-invite-text span {
-    font-size: 0.82rem;
-    color: #475569;
-    font-weight: 500;
-  }
-
-  .hec-invite-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: #FF9900;
-    color: #0F172A;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-    flex-shrink: 0;
-  }
-
-  .hec-invite-btn:hover {
-    transform: scale(1.1);
-    background: #EA580C;
-    color: #FFFFFF;
-  }
-
-  .hec-invite-btn svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  /* ─── 3 SIMPLE SPEAKER BOXES (Hero Card) ─────────────────── */
-  .speakers-section {
-    margin-top: 18px;
-    padding-top: 16px;
-    border-top: 1px solid var(--line);
-  }
-
-  .speakers-title {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    margin-bottom: 10px;
   }
 
   .speakers-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 10px;
   }
+}
 
-  .speaker-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    padding: 10px 12px;
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-s);
-    text-decoration: none;
-    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-    min-width: 0;
-  }
 
-  .speaker-box:hover {
-    border-color: #FF9900;
-    background: #FFFBF5;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 153, 0, 0.12);
-  }
 
-  .speaker-name {
-    font-size: 0.84rem;
-    font-weight: 600;
-    color: var(--ink);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 
-  .speaker-linkedin {
-    width: 15px;
-    height: 15px;
-    color: #0A66C2;
-    flex-shrink: 0;
-    transition: transform 0.2s ease;
-  }
-
-  .speaker-box:hover .speaker-linkedin {
-    transform: scale(1.15);
-  }
-
-  .event-card .speakers-section {
-    margin: 14px 0 16px 0;
-    padding-top: 12px;
-    border-top: 1px solid var(--line);
-  }
-
-  .event-card .speakers-grid {
-    grid-template-columns: 1fr;
-    gap: 7px;
-  }
-
-  .event-card .speaker-box {
-    padding: 8px 12px;
-    background: var(--paper-alt);
-  }
-
-  @media (max-width: 640px) {
-    .event-poster-badges {
-      grid-template-columns: 1fr;
-      gap: 8px;
-    }
-
-    .speakers-grid {
-      grid-template-columns: 1fr;
-      gap: 8px;
-    }
-  }
 
   /* ─── ABOUT ─────────────────────────────────────────────────── */
   .about-grid {
@@ -1088,6 +1144,7 @@ p {
   }
 
   .event-img {
+  position: relative;
     aspect-ratio: 4/3;
     overflow: hidden;
   }
@@ -2359,4 +2416,70 @@ img[src*="Event"] {
   align-items: center;
   gap: 6px;
   white-space: nowrap;
+}
+
+/* ─── ADDED MAXIMIZE BUTTON & MEETUP LINK ──────────────────────── */
+.maximize-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 153, 0, 0.4);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #DE8600;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  opacity: 0.7;
+  transform: scale(1);
+}
+
+.hec-img-wrapper:hover .maximize-btn, .event-img:hover .maximize-btn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.maximize-btn:hover {
+  background: #FF9900;
+  color: #FFFFFF;
+  border-color: #FF9900;
+  box-shadow: 0 6px 16px rgba(255, 153, 0, 0.3);
+}
+
+.maximize-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.hec-invite-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.meetup-btn {
+  background: #FFFFFF;
+  color: #FF9900;
+  border: 2px solid #FF9900;
+}
+
+.meetup-btn:hover {
+  background: #FF9900;
+  color: #FFFFFF;
+}
+
+
+/* FIXES FOR TAG LAYOUT */
+.hec-top, .event-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-start;
 }

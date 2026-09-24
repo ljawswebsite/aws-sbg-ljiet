@@ -188,7 +188,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (openPosterArrow) openPosterArrow.addEventListener('click', openPosterModal);
   if (heroInviteBox) heroInviteBox.addEventListener('click', openPosterModal);
+  
+  // Prevent modal from overriding Meetup link
+  const meetupBtns = document.querySelectorAll('.meetup-btn');
+  meetupBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  });
   if (heroImgWrapper) heroImgWrapper.addEventListener('click', openPosterModal);
+
+  // Ensure all maximize buttons open the modal
+  const maxBtns = document.querySelectorAll('.maximize-btn');
+  maxBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openPosterModal(e);
+    });
+  });
   if (posterModalClose) posterModalClose.addEventListener('click', closePosterModal);
   if (posterModalBackdrop) posterModalBackdrop.addEventListener('click', closePosterModal);
 
