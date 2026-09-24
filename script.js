@@ -162,5 +162,40 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 1500);
     });
   }
+
+  /* ─── POSTER LIGHTBOX MODAL ────────────────────────────── */
+  const posterModal = document.getElementById('posterModal');
+  const openPosterArrow = document.getElementById('openPosterArrow');
+  const heroInviteBox = document.getElementById('heroInviteBox');
+  const heroImgWrapper = document.getElementById('heroImgWrapper');
+  const posterModalClose = document.getElementById('posterModalClose');
+  const posterModalBackdrop = document.getElementById('posterModalBackdrop');
+
+  const openPosterModal = (e) => {
+    if (e) e.preventDefault();
+    if (!posterModal) return;
+    posterModal.classList.add('active');
+    posterModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closePosterModal = () => {
+    if (!posterModal) return;
+    posterModal.classList.remove('active');
+    posterModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  if (openPosterArrow) openPosterArrow.addEventListener('click', openPosterModal);
+  if (heroInviteBox) heroInviteBox.addEventListener('click', openPosterModal);
+  if (heroImgWrapper) heroImgWrapper.addEventListener('click', openPosterModal);
+  if (posterModalClose) posterModalClose.addEventListener('click', closePosterModal);
+  if (posterModalBackdrop) posterModalBackdrop.addEventListener('click', closePosterModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && posterModal && posterModal.classList.contains('active')) {
+      closePosterModal();
+    }
+  });
 });
 
