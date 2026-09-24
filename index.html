@@ -98,42 +98,105 @@
           </div>
 
           <div class="hero-event-card">
-            <div class="hec-img-wrapper">
-              <img class="img-goddess" src="images/Goddess.jpeg" alt="AWS SBG Inauguration event" width="480" height="360"
+            <div class="hec-img-wrapper" id="heroImgWrapper" title="Click to view full poster &amp; scan to register">
+              <img class="img-event" src="images/Event.jpeg" alt="Cloud Ignite - AWS SBG Inauguration Event" width="480" height="360"
                 loading="eager">
             </div>
             <div class="hec-body">
               <div class="hec-top">
                 <span class="tag">Inaugural Launch</span>
-                <span class="hec-date">TBA</span>
+                <span class="hec-date">Monday, 28th September 2026</span>
               </div>
-              <h3>AWS SBG Inauguration &amp; Cloud Fundamentals</h3>
-              <p>The official launch of the club with a live session on AWS Cloud Fundamentals. Set up your lab, deploy
-                your first resource, and meet your team.</p>
-              <div class="hec-meta">
-                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <polyline points="12 6 12 12 16 14" />
-                  </svg> TBA</span>
-                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg> TBA</span>
+              <h3>Cloud Ignite: The Inaugural Launch</h3>
+              <p>AWS Student Builder Group by LJ Institute of Engineering and Technology presents Cloud Ignite &mdash; the official inaugural launch featuring AWS cloud fundamentals and hands-on guidance.</p>
+              
+              <!-- Event Detail Badges (matching Event.jpeg poster) -->
+              <div class="event-poster-badges">
+                <div class="ep-badge">
+                  <div class="ep-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                  </div>
+                  <div class="ep-text">
+                    <span class="ep-label">MONDAY</span>
+                    <strong class="ep-val">28TH</strong>
+                    <span class="ep-sub">SEPTEMBER 2026</span>
+                  </div>
+                </div>
+
+                <div class="ep-badge">
+                  <div class="ep-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                  </div>
+                  <div class="ep-text">
+                    <span class="ep-label">TIME</span>
+                    <strong class="ep-val">2:30 PM &ndash; 4:30 PM</strong>
+                  </div>
+                </div>
+
+                <div class="ep-badge">
+                  <div class="ep-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </div>
+                  <div class="ep-text">
+                    <span class="ep-label">VENUE</span>
+                    <strong class="ep-val">LJ University &ndash;</strong>
+                    <span class="ep-sub venue-sub">Architecture Auditorium</span>
+                  </div>
+                </div>
               </div>
-              <div class="hec-speaker">
-                <div class="hec-speaker-avatar">
+
+              <!-- Speakers: 3 Simple Boxes -->
+              <div class="speakers-section">
+                <div class="speakers-title">Speakers</div>
+                <div class="speakers-grid">
+                  <a class="speaker-box" href="https://www.linkedin.com/in/nilesh-vaghela/?skipRedirect=true" target="_blank" rel="noopener noreferrer" title="Nilesh Vaghela on LinkedIn">
+                    <span class="speaker-name">Nilesh Vaghela</span>
+                    <svg class="speaker-linkedin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </a>
+
+                  <a class="speaker-box" href="https://www.linkedin.com/in/dimple-vaghela-ba45447b/" target="_blank" rel="noopener noreferrer" title="Dimple Vaghela on LinkedIn">
+                    <span class="speaker-name">Dimple Vaghela</span>
+                    <svg class="speaker-linkedin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </a>
+
+                  <a class="speaker-box" href="https://www.linkedin.com/in/manthan340/" target="_blank" rel="noopener noreferrer" title="Manthan Tripathi on LinkedIn">
+                    <span class="speaker-name">Manthan Tripathi</span>
+                    <svg class="speaker-linkedin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="hec-invite" id="heroInviteBox" title="Click to open poster &amp; scan to register">
+                <div class="hec-invite-text">
+                  <strong>YOU'RE INVITED!</strong>
+                  <span>Scan to register &bull; Click arrow to view poster</span>
+                </div>
+                <a class="hec-invite-btn" href="images/Event.jpeg" target="_blank" rel="noopener noreferrer" id="openPosterArrow" aria-label="Open Event poster to scan and register">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" width="18" height="18">
-                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
+                    stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
                   </svg>
-                </div>
-                <div class="hec-speaker-info">
-                  <strong>Guest Speaker: TBA</strong>
-                  <span>To be announced</span>
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -209,27 +272,61 @@
         <div class="events-grid">
           <article class="card event-card">
             <div class="event-img">
-              <img class="img-goddess" src="images/Goddess.jpeg" alt="AWS Student Builder Group inauguration event" width="400"
+              <img class="img-event" src="images/Event.jpeg" alt="AWS Student Builder Group Cloud Ignite Inauguration" width="400"
                 height="300" loading="lazy">
             </div>
             <div class="event-body">
               <div class="event-meta-row">
                 <span class="tag">Inaugural Launch</span>
-                <span class="hec-date">TBA</span>
+                <span class="hec-date">Monday, 28th September 2026</span>
               </div>
-              <h3>AWS SBG Inauguration &amp; Cloud Fundamentals Session</h3>
-              <p>The official launch of AWS Student Builder Group at LJIET with a live session on AWS Cloud Fundamentals. Guest speaker and session details to be announced.</p>
+              <h3>Cloud Ignite: The Inaugural Launch of AWS SBG</h3>
+              <p>AWS Student Builder Group by LJ Institute of Engineering and Technology presents Cloud Ignite. Join us for live AWS cloud fundamentals and hands-on guidance.</p>
+              
+              <!-- Speakers: 3 Simple Boxes -->
+              <div class="speakers-section">
+                <div class="speakers-title">Speakers</div>
+                <div class="speakers-grid">
+                  <a class="speaker-box" href="https://www.linkedin.com/in/nilesh-vaghela/?skipRedirect=true" target="_blank" rel="noopener noreferrer" title="Nilesh Vaghela on LinkedIn">
+                    <span class="speaker-name">Nilesh Vaghela</span>
+                    <svg class="speaker-linkedin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </a>
+
+                  <a class="speaker-box" href="https://www.linkedin.com/in/dimple-vaghela-ba45447b/" target="_blank" rel="noopener noreferrer" title="Dimple Vaghela on LinkedIn">
+                    <span class="speaker-name">Dimple Vaghela</span>
+                    <svg class="speaker-linkedin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </a>
+
+                  <a class="speaker-box" href="https://www.linkedin.com/in/manthan340/" target="_blank" rel="noopener noreferrer" title="Manthan Tripathi on LinkedIn">
+                    <span class="speaker-name">Manthan Tripathi</span>
+                    <svg class="speaker-linkedin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
               <div class="event-footer">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                  </svg>Monday, 28th Sep 2026</span>
                 <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10" />
                     <polyline points="12 6 12 12 16 14" />
-                  </svg>TBA</span>
+                  </svg>2:30 PM &ndash; 4:30 PM</span>
                 <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round">
                     <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z" />
                     <circle cx="12" cy="10" r="3" />
-                  </svg>TBA</span>
+                  </svg>LJ University &ndash; Architecture Auditorium</span>
               </div>
             </div>
           </article>
@@ -582,6 +679,34 @@
       </div>
     </div>
   </footer>
+
+  <!-- ── POSTER LIGHTBOX MODAL ──────────────────────────────── -->
+  <div class="poster-modal" id="posterModal" aria-hidden="true" role="dialog" aria-label="Event Poster">
+    <div class="pm-backdrop" id="posterModalBackdrop"></div>
+    <div class="pm-container">
+      <div class="pm-header">
+        <div class="pm-title">
+          <span class="tag">Scan to Register</span>
+          <h3>Cloud Ignite &mdash; Official Event Poster</h3>
+        </div>
+        <button class="pm-close" id="posterModalClose" type="button" aria-label="Close poster popup">&times;</button>
+      </div>
+      <div class="pm-body">
+        <img src="images/Event.jpeg" alt="Cloud Ignite Inaugural Launch Event Poster - Scan to Register" class="pm-img">
+      </div>
+      <div class="pm-footer">
+        <p>Scan the QR code on the poster with your camera to register.</p>
+        <a class="btn btn-primary btn-sm" href="images/Event.jpeg" target="_blank" rel="noopener noreferrer">
+          Open Image
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
