@@ -1,0 +1,13 @@
+# robots.txt for AWS Student Builder Group - LJIET Chapter
+# Production URL: https://ljawswebsite.github.io/aws-sbg-ljiet/
+
+User-agent: *
+Allow: /
+
+# Ensure search crawlers can fully render CSS, JS, and Images for Core Web Vitals & indexing
+Allow: /images/
+Allow: /style.css
+Allow: /script.js
+
+# Sitemap location
+Sitemap: https://ljawswebsite.github.io/aws-sbg-ljiet/sitemap.xml
