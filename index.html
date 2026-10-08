@@ -21,7 +21,8 @@
     content="LJIET's official cloud computing club — hands-on labs, AWS certification study groups, DevOps bootcamps, and serverless hackathons.">
   <meta property="og:url" content="https://ljawswebsite.github.io/aws-sbg-ljiet/">
   <meta property="og:image" content="https://ljawswebsite.github.io/aws-sbg-ljiet/images/AWS_LJIET_LOGO.jpeg">
-  <meta property="og:image:secure_url" content="https://ljawswebsite.github.io/aws-sbg-ljiet/images/AWS_LJIET_LOGO.jpeg">
+  <meta property="og:image:secure_url"
+    content="https://ljawswebsite.github.io/aws-sbg-ljiet/images/AWS_LJIET_LOGO.jpeg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1254">
   <meta property="og:image:height" content="1254">
@@ -44,7 +45,8 @@
   <!-- Google Fonts Preconnect and Parallel Stylesheet Loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
   <link rel="stylesheet" href="style.css">
 
   <!-- Structured Data: Organization, WebSite & Event Schema (JSON-LD) -->
@@ -255,87 +257,86 @@
             </div>
           </div>
 
-          <div class="hero-event-card hero-flip-card" id="heroEventCard">
-            <div class="hec-flip-inner" id="heroCardInner">
-              <!-- ── FRONT FACE ────────────────────────────────────────── -->
-              <div class="hec-face hec-front" id="heroCardFront" aria-hidden="false">
-                <div class="hec-poster-wrapper" id="heroImgWrapper" title="Click to view full poster">
-                  <picture class="hec-poster-picture">
-                    <source media="(max-width: 768px)" srcset="images/aws_certification_roadmap_image_responsive.png">
-                    <img class="hec-poster-img" src="images/aws_certification_roadmap_image.png" alt="AWS Certification: Your Roadmap to the Golden Jacket event poster" width="1708" height="921" loading="eager" fetchpriority="high" decoding="async">
-                  </picture>
-                  <button class="maximize-btn" type="button" aria-label="View event poster in full screen" title="View poster full screen">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
-                    </svg>
-                  </button>
+          <div class="hero-event-card" id="heroEventCard">
+            <!-- Front Poster Media Area -->
+            <div class="hec-poster-wrapper" id="heroImgWrapper" title="Click to view full poster">
+              <picture class="hec-poster-picture">
+                <source media="(max-width: 768px)" srcset="images/aws_certification_roadmap_image_responsive.png">
+                <img class="hec-poster-img" src="images/aws_certification_roadmap_image.png" alt="AWS Certification: Your Roadmap to the Golden Jacket event poster" width="1708" height="921" loading="eager" fetchpriority="high" decoding="async">
+              </picture>
+              <button class="maximize-btn" type="button" aria-label="View event poster in full screen" title="View poster full screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+                </svg>
+              </button>
+            </div>
+
+            <div class="hec-body">
+              <div class="hec-top">
+                <span class="tag premium-tag" id="heroEventStatusTag">
+                  <span class="live-indicator-dot" aria-hidden="true"></span>
+                  <span id="heroStatusText">UPCOMING EVENT</span>
+                </span>
+                <span class="hec-format-tag">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  Online Event
+                </span>
+              </div>
+
+              <h3 class="hec-title">AWS Certification: Your Roadmap to the Golden Jacket</h3>
+
+              <div class="hec-meta-info">
+                <div class="hec-meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                  </svg>
+                  <span>10 Oct 2026</span>
                 </div>
-
-                <div class="hec-body">
-                  <div class="hec-top">
-                    <span class="tag premium-tag" id="heroEventStatusTag">
-                      <span class="live-indicator-dot" aria-hidden="true"></span>
-                      <span id="heroStatusText">UPCOMING EVENT</span>
-                    </span>
-                    <span class="hec-format-tag">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                      Online Event
-                    </span>
-                  </div>
-
-                  <h3 class="hec-title">AWS Certification: Your Roadmap to the Golden Jacket</h3>
-
-                  <div class="hec-meta-info">
-                    <div class="hec-meta-item">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                        <line x1="16" y1="2" x2="16" y2="6" />
-                        <line x1="8" y1="2" x2="8" y2="6" />
-                        <line x1="3" y1="10" x2="21" y2="10" />
-                      </svg>
-                      <span>10 Oct 2026</span>
-                    </div>
-                    <span class="hec-meta-divider" aria-hidden="true">&bull;</span>
-                    <div class="hec-meta-item">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="12 6 12 12 16 14" />
-                      </svg>
-                      <span>4:00 PM &ndash; 6:00 PM IST</span>
-                    </div>
-                  </div>
-
-                  <p class="hec-summary">
-                    Your roadmap to AWS Certification, preparation, career growth and the Golden Jacket journey.
-                  </p>
-
-                  <div class="hec-footer-actions hec-stacked-actions">
-                    <a href="https://www.meetup.com/aws-sbg-at-lj-institute-of-engineering-and-technology/" target="_blank" rel="noopener noreferrer" class="btn btn-primary hec-cta-btn hec-register-btn" id="heroRegisterBtn">
-                      Register Now
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M5 12h14M13 5l7 7-7 7"/>
-                      </svg>
-                    </a>
-                    <button type="button" class="btn btn-outline hec-cta-btn hec-flip-btn" id="heroFlipToBackBtn" aria-expanded="false" aria-controls="heroCardBack">
-                      Know More
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M5 12h14M13 5l7 7-7 7"/>
-                      </svg>
-                    </button>
-                  </div>
+                <span class="hec-meta-divider" aria-hidden="true">&bull;</span>
+                <div class="hec-meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  <span>4:00 PM &ndash; 6:00 PM IST</span>
                 </div>
               </div>
 
-              <!-- ── BACK FACE ─────────────────────────────────────────── -->
-              <div class="hec-face hec-back" id="heroCardBack" aria-hidden="true">
-                <div class="hec-back-body">
-                  <div class="hec-back-header">
+              <p class="hec-summary">
+                Your roadmap to AWS Certification, preparation, career growth and the Golden Jacket journey.
+              </p>
+
+              <div class="hec-footer-actions hec-stacked-actions">
+                <a href="https://www.meetup.com/aws-sbg-at-lj-institute-of-engineering-and-technology/" target="_blank" rel="noopener noreferrer" class="btn btn-primary hec-cta-btn hec-register-btn" id="heroRegisterBtn">
+                  Register Now
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M13 5l7 7-7 7"/>
+                  </svg>
+                </a>
+                <button type="button" class="btn btn-outline hec-cta-btn hec-expand-btn" id="heroFlipToBackBtn" aria-expanded="false" aria-controls="heroExpandedDetails">
+                  <span class="hec-expand-text">Know More</span>
+                  <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Expandable Details Section -->
+            <div class="card-expandable-panel" id="heroExpandedDetails" aria-hidden="true">
+              <div class="card-expandable-inner">
+                <div class="hec-expanded-content">
+                  <hr class="card-expand-divider" aria-hidden="true">
+
+                  <div class="hec-expanded-header">
                     <div class="hec-eyebrow-row">
                       <span class="hec-eyebrow">YOU&apos;RE INVITED!</span>
                       <span class="tag premium-tag-subtle">Online Session</span>
                     </div>
-                    <h3 class="hec-back-title">AWS Certification: Your Roadmap to the Golden Jacket</h3>
-                    <p class="hec-back-desc">
+                    <p class="hec-expanded-desc">
                       Ready to take your first step towards AWS Certification? Join us for an interactive session where we&apos;ll explore AWS Certification, preparation strategies, career opportunities, and the journey towards the AWS Golden Jacket.
                     </p>
                   </div>
@@ -344,91 +345,63 @@
                     <div class="hec-section-kicker">What we&apos;ll explore</div>
                     <ul class="hec-topics-list">
                       <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                         <span>AWS Certification &amp; the certification roadmap</span>
                       </li>
                       <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                         <span>Preparation strategies &amp; resources</span>
                       </li>
                       <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                         <span>A speaker&apos;s Golden Jacket journey</span>
                       </li>
                       <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                         <span>Certification, career &amp; growth opportunities</span>
                       </li>
                       <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                         <span>Live Q&amp;A</span>
                       </li>
                     </ul>
                   </div>
 
-                  <div class="hec-speaker-card">
-                    <div class="hec-speaker-head">
-                      <span class="hec-section-kicker">Featured Speaker</span>
-                    </div>
-                    <div class="hec-speaker-content">
-                      <img class="hec-speaker-avatar" src="images/aws_ankit_haseeja_speaker.jpg" alt="Ankit Haseeja – AWS Certification session speaker" width="68" height="68" loading="lazy" decoding="async">
-                      <div class="hec-speaker-details">
-                        <div class="hec-speaker-name-row">
-                          <h4 class="hec-speaker-name">Ankit Haseeja</h4>
-                        </div>
-                        <p class="hec-speaker-role">Senior AI Engineer at JPMorganChase</p>
-                        <div class="hec-speaker-chips">
-                          <span class="hec-chip hec-chip-golden">
-                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            AWS Golden Jacket
-                          </span>
-                          <span class="hec-chip">65+ AWS Cloud Certifications</span>
-                        </div>
-                        <a class="hec-linkedin-btn" href="https://www.linkedin.com/in/ankithaseeja/" target="_blank" rel="noopener noreferrer" aria-label="View Ankit Haseeja on LinkedIn">
-                          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                          </svg>
-                          <span>View Speaker on LinkedIn &nearr;</span>
-                        </a>
-                      </div>
-                    </div>
+                  <!-- Speaker LinkedIn Link Only (No Image, No Speaker Details) -->
+                  <div class="hec-speaker-linkedin-block">
+                    <a class="hec-linkedin-btn-card" href="https://www.linkedin.com/in/ankithaseeja/" target="_blank" rel="noopener noreferrer" title="View Ankit Haseeja on LinkedIn">
+                      <svg class="linkedin-svg-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                      </svg>
+                      <span class="linkedin-btn-label">LinkedIn &rarr; Ankit Haseeja</span>
+                    </a>
                   </div>
 
                   <div class="hec-back-summary-bar">
                     <div class="hec-summary-point">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
                       <span>10 Oct 2026</span>
                     </div>
                     <span class="hec-summary-sep" aria-hidden="true">|</span>
                     <div class="hec-summary-point">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
                       <span>4:00 &ndash; 6:00 PM IST</span>
                     </div>
                     <span class="hec-summary-sep" aria-hidden="true">|</span>
                     <div class="hec-summary-point">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                       <span>Online Event</span>
                     </div>
                   </div>
 
-                  <div class="hec-back-actions">
-                    <a href="https://www.meetup.com/aws-sbg-at-lj-institute-of-engineering-and-technology/" target="_blank" rel="noopener noreferrer" class="btn btn-primary hec-cta-btn hec-register-btn" id="heroRegisterBackBtn">
-                      Register Now
+                  <!-- <div class="hec-expanded-footer">
+                    <button type="button" class="btn btn-outline hec-collapse-btn" aria-controls="heroExpandedDetails">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M5 12h14M13 5l7 7-7 7"/>
+                        <path d="M18 15l-6-6-6 6"/>
                       </svg>
-                    </a>
-                  </div>
-
-                  <div class="hec-back-footer">
-                    <button type="button" class="btn btn-outline hec-back-btn" id="heroFlipToFrontBtn" aria-controls="heroCardFront">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M19 12H5M12 19l-7-7 7-7"/>
-                      </svg>
-                        Back to Overview
+                      Show Less
                     </button>
-                    <span class="hec-free-badge">Free Session &bull; Open to All Students</span>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -501,214 +474,188 @@
         <div class="sec-hdr">
           <span class="kicker">Events</span>
           <h2>Upcoming workshops &amp; community sessions.</h2>
-          <p style="margin-top: 0.75rem; color: var(--muted); font-size: 1.05rem;">Hands-on cloud architecture sessions, certification tracks, and tech speaker series.</p>
+          <p style="margin-top: 0.75rem; color: var(--muted); font-size: 1.05rem;">Hands-on cloud architecture sessions,
+            certification tracks, and tech speaker series.</p>
         </div>
         <div class="events-grid">
           <!-- ── CARD 1: UPCOMING EVENT (AWS Certification) ────────── -->
-          <article class="card event-card premium-event-card upcoming-event-card event-flip-card" id="upcomingEventCard">
-            <div class="efc-inner">
-              <!-- FRONT FACE -->
-              <div class="efc-face efc-front" id="upcomingCardFront">
-                <div class="event-img" id="upcomingEventImgWrap" title="Click to view full poster" style="cursor: pointer;">
-                  <img class="img-event" src="images/aws_certification_roadmap_image.jpeg" alt="AWS Certification: Your Roadmap to the Golden Jacket event poster" width="400"
-                    height="300" loading="lazy" style="object-fit: cover; object-position: center top;">
-                  <button type="button" class="maximize-btn" aria-label="View poster full screen">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
-                    </svg>
-                  </button>
-                </div>
-                <div class="event-body efc-body">
-                  <div class="event-meta-row">
-                    <span class="tag premium-tag">Upcoming Event</span>
-                    <span class="hec-date">Saturday, 10th October 2026</span>
-                  </div>
-                  <h3>AWS Certification: Your Roadmap to the Golden Jacket</h3>
-                  <p class="efc-desc">
-                    Ready to take your first step towards AWS Certification? Join us for an interactive session covering certification, preparation, career growth, and the Golden Jacket journey.
-                  </p>
+          <article class="card event-card premium-event-card upcoming-event-card" id="upcomingEventCard">
+            <div class="event-img" id="upcomingEventImgWrap" title="Click to view full poster" style="cursor: pointer;">
+              <img class="img-event" src="images/aws_certification_roadmap_image.jpeg" alt="AWS Certification: Your Roadmap to the Golden Jacket event poster" width="400"
+                height="300" loading="lazy" style="object-fit: cover; object-position: center top;">
+              <button type="button" class="maximize-btn" aria-label="View poster full screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+                </svg>
+              </button>
+            </div>
+            <div class="event-body efc-body">
+              <div class="event-meta-row">
+                <span class="tag premium-tag">Upcoming Event</span>
+                <span class="hec-date">Saturday, 10th October 2026</span>
+              </div>
+              <h3>AWS Certification: Your Roadmap to the Golden Jacket</h3>
+              <p class="efc-desc">
+                Ready to take your first step towards AWS Certification? Join us for an interactive session covering certification, preparation, career growth, and the Golden Jacket journey.
+              </p>
 
-                  <div class="efc-front-actions">
-                    <button type="button" class="btn btn-outline efc-btn efc-flip-btn" id="upcomingAboutBtn" aria-expanded="false" aria-controls="upcomingCardBack">
-                      About Event
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M5 12h14M13 5l7 7-7 7"/>
-                      </svg>
-                    </button>
-                  </div>
-
-                  <div class="event-footer efc-footer-compact">
-                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>10th Oct 2026</span>
-                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>4:00 &ndash; 6:00 PM IST</span>
-                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Online Event</span>
-                  </div>
-                </div>
+              <div class="efc-front-actions">
+                <a href="https://www.meetup.com/aws-sbg-at-lj-institute-of-engineering-and-technology/" target="_blank" rel="noopener noreferrer" class="btn btn-primary efc-btn efc-register-btn" id="upcomingRegisterBtn">
+                  Register Now
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M13 5l7 7-7 7"/>
+                  </svg>
+                </a>
+                <button type="button" class="btn btn-outline efc-btn efc-expand-btn" id="upcomingAboutBtn" aria-expanded="false" aria-controls="upcomingExpandedDetails">
+                  <span class="efc-expand-text">About Event</span>
+                  <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </button>
               </div>
 
-              <!-- BACK FACE -->
-              <div class="efc-face efc-back" id="upcomingCardBack" aria-hidden="true">
-                <div class="efc-back-body">
-                  <!-- Header -->
+              <div class="event-footer efc-footer-compact">
+                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>10th Oct 2026</span>
+                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>4:00 &ndash; 6:00 PM IST</span>
+                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Online Event</span>
+              </div>
+            </div>
+
+            <!-- Expandable Details Section -->
+            <div class="card-expandable-panel" id="upcomingExpandedDetails" aria-hidden="true">
+              <div class="card-expandable-inner">
+                <div class="efc-expanded-content">
+                  <hr class="card-expand-divider" aria-hidden="true">
+
                   <div class="efc-back-header">
                     <div class="hec-eyebrow-row">
                       <span class="hec-eyebrow">YOU&apos;RE INVITED!</span>
                       <span class="tag premium-tag-subtle">Online Session</span>
                     </div>
-                    <h3 class="efc-back-title">AWS Certification: Your Roadmap to the Golden Jacket</h3>
                     <p class="efc-back-desc">
                       Ready to take your first step towards AWS Certification? Join us for an interactive session covering:
                     </p>
                   </div>
 
-                  <!-- Topics -->
                   <div class="uec-topics-section">
                     <div class="hec-section-kicker">WHAT WE&apos;LL EXPLORE</div>
                     <ul class="hec-topics-list uec-topics-list">
                       <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                         <span>AWS Certification &amp; the certification roadmap</span>
                       </li>
                       <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                         <span>Preparation strategies &amp; resources</span>
                       </li>
                       <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                         <span>A speaker&apos;s Golden Jacket journey</span>
                       </li>
                       <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                         <span>Certification, career &amp; growth opportunities</span>
                       </li>
                       <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                         <span>Live Q&amp;A</span>
                       </li>
                     </ul>
                   </div>
 
-                  <!-- Speaker -->
-                  <div class="uec-speaker-section">
-                    <div class="hec-section-kicker">SPEAKER</div>
-                    <div class="hec-speaker-card uec-speaker-card">
-                      <div class="hec-speaker-content">
-                        <img src="images/aws_ankit_haseeja_speaker.jpg" alt="Ankit Haseeja" class="hec-speaker-avatar" width="56" height="56" loading="lazy">
-                        <div class="hec-speaker-details">
-                          <strong class="hec-speaker-name">Ankit Haseeja</strong>
-                          <span class="hec-speaker-role">Senior AI Engineer @ JPMorganChase</span>
-                          <div class="hec-speaker-chips">
-                            <span class="hec-chip hec-chip-golden">
-                              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                              AWS Golden Jacket holder
-                            </span>
-                            <span class="hec-chip">65+ AWS Cloud Certifications</span>
-                          </div>
-                          <a href="https://www.linkedin.com/in/ankithaseeja/" target="_blank" rel="noopener noreferrer" class="hec-linkedin-btn uec-linkedin-btn" title="View Ankit Haseeja LinkedIn profile">
-                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                            </svg>
-                            View LinkedIn &nearr;
-                          </a>
-                        </div>
-                      </div>
-                    </div>
+                  <!-- Speaker LinkedIn Link Only (No Image, No Speaker Details) -->
+                  <div class="hec-speaker-linkedin-block">
+                    <a class="hec-linkedin-btn-card" href="https://www.linkedin.com/in/ankithaseeja/" target="_blank" rel="noopener noreferrer" title="View Ankit Haseeja on LinkedIn">
+                      <svg class="linkedin-svg-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                      </svg>
+                      <span class="linkedin-btn-label">LinkedIn &rarr; Ankit Haseeja</span>
+                    </a>
                   </div>
 
-                  <!-- Event details summary bar -->
                   <div class="hec-back-summary-bar efc-summary-bar">
                     <div class="hec-summary-point">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
                       <span>10 October 2026</span>
                     </div>
                     <span class="hec-summary-sep" aria-hidden="true">|</span>
                     <div class="hec-summary-point">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
                       <span>4:00 &ndash; 6:00 PM IST</span>
                     </div>
                     <span class="hec-summary-sep" aria-hidden="true">|</span>
                     <div class="hec-summary-point">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                       <span>Online Event</span>
                     </div>
                   </div>
 
-                  <!-- Actions -->
-                  <div class="efc-back-actions">
-                    <a href="https://www.meetup.com/aws-sbg-at-lj-institute-of-engineering-and-technology/" target="_blank" rel="noopener noreferrer" class="btn btn-primary efc-btn efc-register-btn" id="upcomingRegisterBackBtn">
-                      Register Now
+                  <!-- <div class="efc-expanded-footer">
+                    <button type="button" class="btn btn-outline efc-collapse-btn" aria-controls="upcomingExpandedDetails">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M5 12h14M13 5l7 7-7 7"/>
+                        <path d="M18 15l-6-6-6 6"/>
                       </svg>
-                    </a>
-                    <button type="button" class="btn btn-outline efc-btn efc-back-btn" id="upcomingBackBtn" aria-controls="upcomingCardFront">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M19 12H5M12 19l-7-7 7-7"/>
-                      </svg>
-                         Back
+                      Show Less
                     </button>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
           </article>
 
           <!-- ── CARD 2: COMPLETED EVENT (Cloud Ignite) ─────────────── -->
-          <article class="card event-card premium-event-card past-event-card event-flip-card" id="pastEventCard">
-            <div class="efc-inner">
-              <!-- FRONT FACE -->
-              <div class="efc-face efc-front" id="pastCardFront">
-                <div class="event-img" id="pastEventImgWrap" style="cursor: pointer;" title="Click to view full image">
-                  <img class="img-event" src="images/event1/cover.png" alt="AWS Student Builder Group Cloud Ignite Inauguration" width="400"
-                    height="300" loading="lazy" style="object-fit: cover;">
-                  <button type="button" class="maximize-btn" aria-label="View full screen">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
-                    </svg>
-                  </button>
-                </div>
-                <div class="event-body efc-body">
-                  <div class="event-meta-row">
-                    <span class="tag" style="background: #E2E8F0; color: #475569; font-weight: 700; font-size: 0.75rem; padding: 4px 10px; border-radius: 20px; text-transform: uppercase;">Completed</span>
-                    <span class="hec-date">Monday, 28th September 2026</span>
-                  </div>
-                  <h3>Session 1: Cloud Ignite</h3>
-                  <p class="efc-desc">
-                    AWS Student Builder Group successfully concluded Session 1: Cloud Ignite. Hands-on AWS cloud fundamentals, architecture basics, and interactive student labs.
-                  </p>
+          <article class="card event-card premium-event-card past-event-card" id="pastEventCard">
+            <div class="event-img" id="pastEventImgWrap" style="cursor: pointer;" title="Click to view full image">
+              <img class="img-event" src="images/event1/cover.png" alt="AWS Student Builder Group Cloud Ignite Inauguration" width="400"
+                height="300" loading="lazy" style="object-fit: cover;">
+              <button type="button" class="maximize-btn" aria-label="View full screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+                </svg>
+              </button>
+            </div>
+            <div class="event-body efc-body">
+              <div class="event-meta-row">
+                <span class="tag" style="background: #E2E8F0; color: #475569; font-weight: 700; font-size: 0.75rem; padding: 4px 10px; border-radius: 20px; text-transform: uppercase;">Completed</span>
+                <span class="hec-date">Monday, 28th September 2026</span>
+              </div>
+              <h3>Session 1: Cloud Ignite</h3>
+              <p class="efc-desc">
+                AWS Student Builder Group successfully concluded Session 1: Cloud Ignite. Hands-on AWS cloud fundamentals, architecture basics, and interactive student labs.
+              </p>
 
-                  <div class="efc-front-actions">
-                    <button type="button" class="btn btn-outline efc-btn efc-flip-btn" id="pastAboutBtn" aria-expanded="false" aria-controls="pastCardBack">
-                      About Event
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M5 12h14M13 5l7 7-7 7"/>
-                      </svg>
-                    </button>
-                  </div>
-
-                  <div class="event-footer efc-footer-compact">
-                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>28th Sep 2026</span>
-                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>2:30 &ndash; 4:30 PM</span>
-                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z" /><circle cx="12" cy="10" r="3" /></svg>Auditorium</span>
-                  </div>
-                </div>
+              <div class="efc-front-actions">
+                <button type="button" class="btn btn-outline efc-btn efc-expand-btn" id="pastAboutBtn" aria-expanded="false" aria-controls="pastExpandedDetails">
+                  <span class="efc-expand-text">About Event</span>
+                  <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </button>
               </div>
 
-              <!-- BACK FACE -->
-              <div class="efc-face efc-back" id="pastCardBack" aria-hidden="true">
-                <div class="efc-back-body">
-                  <!-- Header -->
+              <div class="event-footer efc-footer-compact">
+                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>28th Sep 2026</span>
+                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>2:30 &ndash; 4:30 PM</span>
+                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z" /><circle cx="12" cy="10" r="3" /></svg>Campus Auditorium</span>
+              </div>
+            </div>
+
+            <!-- Expandable Details Section -->
+            <div class="card-expandable-panel" id="pastExpandedDetails" aria-hidden="true">
+              <div class="card-expandable-inner">
+                <div class="efc-expanded-content">
+                  <hr class="card-expand-divider" aria-hidden="true">
+
                   <div class="efc-back-header">
                     <div class="hec-eyebrow-row">
                       <span class="hec-eyebrow">SESSION SUMMARY</span>
                       <span class="tag" style="background: #E2E8F0; color: #475569; font-weight: 700; font-size: 0.72rem; padding: 3px 9px; border-radius: 12px; font-family: var(--font-mono); text-transform: uppercase;">Completed</span>
                     </div>
-                    <h3 class="efc-back-title">Session 1: Cloud Ignite</h3>
                     <p class="efc-back-desc">
                       AWS Student Builder Group successfully concluded Session 1: Cloud Ignite. Thank you to everyone who joined us for live AWS cloud fundamentals and hands-on guidance.
                     </p>
                   </div>
 
-                  <!-- Speakers -->
                   <div class="speakers-section" style="margin-top: 4px; margin-bottom: 12px;">
                     <div class="speakers-title" style="font-size: 0.75rem; font-family: var(--font-mono); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--faint); margin-bottom: 8px;">Speakers</div>
                     <div class="speakers-grid" style="display: grid; gap: 8px;">
@@ -735,7 +682,6 @@
                     </div>
                   </div>
 
-                  <!-- Gallery link -->
                   <div style="margin-bottom: 12px;">
                     <a href="#gallery" class="btn btn-outline" style="width: 100%; justify-content: center; font-size: 0.88rem; padding: 9px 16px;">
                       View Event Gallery
@@ -743,33 +689,31 @@
                     </a>
                   </div>
 
-                  <!-- Event details summary bar -->
                   <div class="hec-back-summary-bar efc-summary-bar">
                     <div class="hec-summary-point">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
                       <span>28 Sep 2026</span>
                     </div>
                     <span class="hec-summary-sep" aria-hidden="true">|</span>
                     <div class="hec-summary-point">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
                       <span>2:30 &ndash; 4:30 PM</span>
                     </div>
                     <span class="hec-summary-sep" aria-hidden="true">|</span>
                     <div class="hec-summary-point">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z" /><circle cx="12" cy="10" r="3" /></svg>
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z" /><circle cx="12" cy="10" r="3" /></svg>
                       <span>Campus Auditorium</span>
                     </div>
                   </div>
 
-                  <!-- Actions -->
-                  <div class="efc-back-actions">
-                    <button type="button" class="btn btn-outline efc-btn efc-back-btn" id="pastBackBtn" aria-controls="pastCardFront">
+                  <!-- <div class="efc-expanded-footer">
+                    <button type="button" class="btn btn-outline efc-collapse-btn" aria-controls="pastExpandedDetails">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        <path d="M18 15l-6-6-6 6"/>
                       </svg>
-                      Back
+                      Show Less
                     </button>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -785,63 +729,104 @@
           <span class="kicker">Gallery</span>
           <h2>Snapshots from labs, coding sessions &amp; demo days.</h2>
         </div>
-        <div class="gallery-albums-container" style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
+        <div class="gallery-albums-container"
+          style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
           <!-- Album Card -->
-          <article class="card" id="event1-album-card" style="width: 100%; max-width: 400px; padding: 1.25rem; margin: 0 auto;">
-            <div style="position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; margin-bottom: 1.25rem; background: #000;">
-              <img src="images/event1/IMG_7735.jpg" alt="Session 1: Cloud Ignite Cover" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
-              <div style="position: absolute; bottom: 12px; right: 12px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; backdrop-filter: blur(4px);">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px; margin-top: -2px;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>5 Photos
+          <article class="card" id="event1-album-card"
+            style="width: 100%; max-width: 400px; padding: 1.25rem; margin: 0 auto;">
+            <div
+              style="position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; margin-bottom: 1.25rem; background: #000;">
+              <img src="images/event1/IMG_7735.jpg" alt="Session 1: Cloud Ignite Cover" loading="lazy"
+                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: opacity 0.3s;"
+                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+              <div
+                style="position: absolute; bottom: 12px; right: 12px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; backdrop-filter: blur(4px);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"
+                  style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px; margin-top: -2px;">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" />
+                </svg>5 Photos
               </div>
             </div>
             <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Session 1: Cloud Ignite</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.4;">Inaugural launch featuring AWS cloud fundamentals and hands-on guidance.</p>
-            <button class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="document.getElementById('event1-album-card').style.display='none'; document.getElementById('event1-gallery-view').style.display='block';">
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.4;">Inaugural
+              launch featuring AWS cloud fundamentals and hands-on guidance.</p>
+            <button class="btn btn-primary" style="width: 100%; justify-content: center;"
+              onclick="document.getElementById('event1-album-card').style.display='none'; document.getElementById('event1-gallery-view').style.display='block';">
               Show all images
             </button>
           </article>
 
           <!-- The Expanded Grid (Hidden Initially) -->
           <div id="event1-gallery-view" style="display: none; width: 100%;">
-            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+            <div
+              style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
               <h3 style="margin: 0; font-size: 1.5rem;">Session 1: Cloud Ignite</h3>
-              <button class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;" onclick="document.getElementById('event1-gallery-view').style.display='none'; document.getElementById('event1-album-card').style.display='block';">
+              <button class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;"
+                onclick="document.getElementById('event1-gallery-view').style.display='none'; document.getElementById('event1-album-card').style.display='block';">
                 &larr; Back to Albums
               </button>
             </div>
             <div class="gallery-grid">
               <figure class="gallery-item">
                 <div class="g-img">
-                  <img src="images/event1/20260928_153516.jpg" alt="Session 1: Cloud Ignite" width="400" height="300" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
-                  <button class="maximize-btn" aria-label="View photo full screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>
+                  <img src="images/event1/20260928_153516.jpg" alt="Session 1: Cloud Ignite" width="400" height="300"
+                    loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+                  <button class="maximize-btn" aria-label="View photo full screen"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+                    </svg></button>
                 </div>
                 <figcaption class="gallery-caption">Session 1: Cloud Ignite</figcaption>
               </figure>
               <figure class="gallery-item">
                 <div class="g-img">
-                  <img src="images/event1/20260928_160924.jpg" alt="Session 1: Cloud Ignite" width="400" height="300" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
-                  <button class="maximize-btn" aria-label="View photo full screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>
+                  <img src="images/event1/20260928_160924.jpg" alt="Session 1: Cloud Ignite" width="400" height="300"
+                    loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+                  <button class="maximize-btn" aria-label="View photo full screen"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+                    </svg></button>
                 </div>
                 <figcaption class="gallery-caption">Session 1: Cloud Ignite</figcaption>
               </figure>
               <figure class="gallery-item">
                 <div class="g-img">
-                  <img src="images/event1/IMG_0543.jpg" alt="Session 1: Cloud Ignite" width="400" height="300" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
-                  <button class="maximize-btn" aria-label="View photo full screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>
+                  <img src="images/event1/IMG_0543.jpg" alt="Session 1: Cloud Ignite" width="400" height="300"
+                    loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+                  <button class="maximize-btn" aria-label="View photo full screen"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+                    </svg></button>
                 </div>
                 <figcaption class="gallery-caption">Session 1: Cloud Ignite</figcaption>
               </figure>
               <figure class="gallery-item">
                 <div class="g-img">
-                  <img src="images/event1/IMG_0975.jpg" alt="Session 1: Cloud Ignite" width="400" height="300" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
-                  <button class="maximize-btn" aria-label="View photo full screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>
+                  <img src="images/event1/IMG_0975.jpg" alt="Session 1: Cloud Ignite" width="400" height="300"
+                    loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+                  <button class="maximize-btn" aria-label="View photo full screen"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+                    </svg></button>
                 </div>
                 <figcaption class="gallery-caption">Session 1: Cloud Ignite</figcaption>
               </figure>
               <figure class="gallery-item">
                 <div class="g-img">
-                  <img src="images/event1/IMG_7735.jpg" alt="Session 1: Cloud Ignite" width="400" height="300" loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
-                  <button class="maximize-btn" aria-label="View photo full screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>
+                  <img src="images/event1/IMG_7735.jpg" alt="Session 1: Cloud Ignite" width="400" height="300"
+                    loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+                  <button class="maximize-btn" aria-label="View photo full screen"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+                    </svg></button>
                 </div>
                 <figcaption class="gallery-caption">Session 1: Cloud Ignite</figcaption>
               </figure>
@@ -862,7 +847,8 @@
 
         <div class="captain-row">
           <article class="card captain-card">
-            <img class="avatar" src="images/tushar-thakar.jpeg" alt="Tushar Thakar - Faculty Coordinator" width="110" height="110" loading="lazy" decoding="async" style="object-fit: cover;">
+            <img class="avatar" src="images/tushar-thakar.jpeg" alt="Tushar Thakar - Faculty Coordinator" width="110"
+              height="110" loading="lazy" decoding="async" style="object-fit: cover;">
             <div>
               <h3>Tushar Thakar</h3>
               <div class="member-role">Faculty Coordinator</div>
@@ -871,7 +857,8 @@
             </div>
           </article>
           <article class="card captain-card">
-            <div class="avatar"><img src="images/Anjali.jpg" alt="Anjali Dubey - President &amp; Chapter Lead" width="110" height="110" loading="lazy" decoding="async">
+            <div class="avatar"><img src="images/Anjali.jpg" alt="Anjali Dubey - President &amp; Chapter Lead"
+                width="110" height="110" loading="lazy" decoding="async">
             </div>
             <div>
               <h3>Anjali Dubey</h3>
@@ -892,7 +879,8 @@
 
         <div class="core-grid">
           <article class="card core-card">
-            <div class="avatar"><img src="images/Romin.jpg" alt="Romin Kevadiya - Technical Lead" width="90" height="90" loading="lazy" decoding="async">
+            <div class="avatar"><img src="images/Romin.jpg" alt="Romin Kevadiya - Technical Lead" width="90" height="90"
+                loading="lazy" decoding="async">
             </div>
             <h3>Romin Kevadiya</h3>
             <div class="member-role">Technical Lead</div>
@@ -907,8 +895,8 @@
             </div>
           </article>
           <article class="card core-card">
-            <div class="avatar"><img src="images/indrakshi.jpg" alt="Indrakshi Singh C. - Content Lead" width="90" height="90"
-                loading="lazy" decoding="async"></div>
+            <div class="avatar"><img src="images/indrakshi.jpg" alt="Indrakshi Singh C. - Content Lead" width="90"
+                height="90" loading="lazy" decoding="async"></div>
             <h3>Indrakshi Singh C.</h3>
             <div class="member-role">Content Lead</div>
             <div class="socials">
@@ -922,7 +910,8 @@
             </div>
           </article>
           <article class="card core-card">
-            <div class="avatar"><img src="images/Rajvee.jpg" alt="Rajvee Kapadia - Marketing Lead" width="90" height="90" loading="lazy" decoding="async">
+            <div class="avatar"><img src="images/Rajvee.jpg" alt="Rajvee Kapadia - Marketing Lead" width="90"
+                height="90" loading="lazy" decoding="async">
             </div>
             <h3>Rajvee Kapadia</h3>
             <div class="member-role">Marketing Lead</div>
@@ -937,7 +926,8 @@
             </div>
           </article>
           <article class="card core-card">
-            <div class="avatar"><img src="images/Labdhi.jpg" alt="Labdhi Shah - Social Media Lead" width="90" height="90" loading="lazy" decoding="async">
+            <div class="avatar"><img src="images/Labdhi.jpg" alt="Labdhi Shah - Social Media Lead" width="90"
+                height="90" loading="lazy" decoding="async">
             </div>
             <h3>Labdhi Shah</h3>
             <div class="member-role">Social Media Lead</div>
@@ -952,8 +942,8 @@
             </div>
           </article>
           <article class="card core-card">
-            <div class="avatar avatar-devam"><img src="images/devam.PNG" alt="Devam Doshi - Event Management Lead" width="90" height="90"
-                loading="lazy" decoding="async"></div>
+            <div class="avatar avatar-devam"><img src="images/devam.PNG" alt="Devam Doshi - Event Management Lead"
+                width="90" height="90" loading="lazy" decoding="async"></div>
             <h3>Devam Doshi</h3>
             <div class="member-role">Event Management Lead</div>
             <div class="socials">
@@ -1058,7 +1048,8 @@
               height="34" loading="lazy">
             <div class="footer-divider"></div>
             <div class="footer-aws-block">
-              <img src="images/AWS_LJIET_LOGO.jpeg" alt="AWS SBG logo" width="34" height="34" loading="lazy" decoding="async">
+              <img src="images/AWS_LJIET_LOGO.jpeg" alt="AWS SBG logo" width="34" height="34" loading="lazy"
+                decoding="async">
             </div>
           </div>
           <div class="footer-brand-name">
@@ -1068,11 +1059,23 @@
           <p class="footer-brand-desc">A student developer community at LJ Institute of Engineering &amp; Technology,
             focused on practical cloud training, certifications, and hands-on software building.</p>
           <div class="footer-social-icons">
-            <a href="https://www.linkedin.com/company/aws-student-builder-group-at-ljiet/posts/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
+            <a href="https://www.linkedin.com/company/aws-student-builder-group-at-ljiet/posts/" target="_blank"
+              rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
             </a>
-            <a href="https://www.instagram.com/aws.sbg_lj" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
+            <a href="https://www.instagram.com/aws.sbg_lj" target="_blank" rel="noopener noreferrer"
+              aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
             </a>
           </div>
         </div>
@@ -1095,9 +1098,14 @@
         </div>
         <div class="footer-col">
           <h4>Location</h4>
-          <a href="https://maps.app.goo.gl/pAU9sUghX5FwtEg86" target="_blank" rel="noopener noreferrer" class="footer-address-link">
+          <a href="https://maps.app.goo.gl/pAU9sUghX5FwtEg86" target="_blank" rel="noopener noreferrer"
+            class="footer-address-link">
             <address class="footer-address">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z" /><circle cx="12" cy="10" r="3" /></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
               <span>
                 LJ Institute of Engineering and Technology,<br>
                 TTEC Rd, Makarba,<br>
@@ -1124,10 +1132,12 @@
     <div class="pm-backdrop" id="posterModalBackdrop"></div>
     <div class="pm-container">
       <div class="pm-header" style="justify-content: flex-end; border-bottom: none; padding: 12px 16px 0;">
-        <button class="pm-close" id="posterModalClose" type="button" aria-label="Close poster popup" style="margin-left: auto; background: rgba(0,0,0,0.1); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;">&times;</button>
+        <button class="pm-close" id="posterModalClose" type="button" aria-label="Close poster popup"
+          style="margin-left: auto; background: rgba(0,0,0,0.1); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;">&times;</button>
       </div>
       <div class="pm-body">
-        <img src="images/Event.jpeg" alt="Cloud Ignite Inaugural Launch Event Poster - Scan to Register" class="pm-img" width="1024" height="1536" loading="lazy" decoding="async">
+        <img src="images/Event.jpeg" alt="Cloud Ignite Inaugural Launch Event Poster - Scan to Register" class="pm-img"
+          width="1024" height="1536" loading="lazy" decoding="async">
       </div>
 
     </div>
