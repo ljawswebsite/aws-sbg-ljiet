@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ─── NAVBAR SCROLL EFFECT & PROGRESS BAR ───────────────── */
   const navbar = document.getElementById('navbar');
   const scrollProgress = document.getElementById('scrollProgress');
-  
+
   const updateScrollState = () => {
     const scrollY = window.scrollY;
 
@@ -141,17 +141,17 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const btn = e.currentTarget.querySelector('button[type="submit"]');
       const originalText = btn.innerHTML;
-      
+
       btn.innerHTML = 'Sending...';
       btn.disabled = true;
       btn.style.opacity = '0.7';
-      
+
       setTimeout(() => {
         btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Sent Successfully!';
         btn.style.background = '#1E9E5A';
         btn.style.color = '#FFF';
         btn.style.opacity = '1';
-        
+
         setTimeout(() => {
           btn.innerHTML = originalText;
           btn.disabled = false;
@@ -163,173 +163,98 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ─── HERO EVENT FLIP CARD ─────────────────────────────── */
-  const heroEventCard = document.getElementById('heroEventCard');
-  const heroFlipToBackBtn = document.getElementById('heroFlipToBackBtn');
-  const heroFlipToFrontBtn = document.getElementById('heroFlipToFrontBtn');
-  const heroCardFront = document.getElementById('heroCardFront');
-  const heroCardBack = document.getElementById('heroCardBack');
+  /* ─── EXPANDABLE EVENT CARDS ────────────────────────────── */
+  function initExpandableCard({
+    cardId,
+    toggleBtnId,
+    panelId,
+    collapseBtnClass,
+    textClass,
+    defaultText,
+    expandedText = 'Show Less'
+  }) {
+    const card = document.getElementById(cardId);
+    const toggleBtn = document.getElementById(toggleBtnId);
+    const panel = document.getElementById(panelId);
+    if (!card || !toggleBtn || !panel) return null;
 
-  const updateHeroCardHeight = (toBack) => {
-    if (!heroEventCard || !heroCardFront || !heroCardBack) return;
-    if (toBack) {
-      heroCardBack.style.position = 'static';
-      heroCardBack.style.height = 'auto';
-      const targetH = heroCardBack.offsetHeight;
-      heroCardBack.style.position = '';
-      heroCardBack.style.height = '';
-      heroEventCard.style.height = targetH + 'px';
-    } else {
-      heroEventCard.style.height = heroCardFront.offsetHeight + 'px';
-      setTimeout(() => {
-        if (heroEventCard && !heroEventCard.classList.contains('is-flipped')) {
-          heroEventCard.style.height = '';
+    const labelEl = toggleBtn.querySelector(textClass) || toggleBtn;
+    const bottomCollapseBtn = panel.querySelector(collapseBtnClass);
+
+    const setExpanded = (expand) => {
+      if (expand) {
+        card.classList.add('is-expanded');
+        panel.classList.add('is-open');
+        panel.setAttribute('aria-hidden', 'false');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        if (labelEl) labelEl.textContent = expandedText;
+      } else {
+        card.classList.remove('is-expanded');
+        panel.classList.remove('is-open');
+        panel.setAttribute('aria-hidden', 'true');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        if (labelEl) labelEl.textContent = defaultText;
+      }
+    };
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isExpanded = card.classList.contains('is-expanded');
+      setExpanded(!isExpanded);
+    });
+
+    if (bottomCollapseBtn) {
+      bottomCollapseBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setExpanded(false);
+        const rect = card.getBoundingClientRect();
+        if (rect.top < 70) {
+          card.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-      }, 700);
+      });
     }
-  };
 
-  const flipHeroCard = (toBack = true) => {
-    if (!heroEventCard) return;
-
-    if (toBack) {
-      updateHeroCardHeight(true);
-      heroEventCard.classList.add('is-flipped');
-      if (heroFlipToBackBtn) heroFlipToBackBtn.setAttribute('aria-expanded', 'true');
-      if (heroCardFront) heroCardFront.setAttribute('aria-hidden', 'true');
-      if (heroCardBack) {
-        heroCardBack.setAttribute('aria-hidden', 'false');
-        if (heroFlipToFrontBtn) heroFlipToFrontBtn.focus();
-      }
-    } else {
-      updateHeroCardHeight(false);
-      heroEventCard.classList.remove('is-flipped');
-      if (heroFlipToBackBtn) {
-        heroFlipToBackBtn.setAttribute('aria-expanded', 'false');
-        heroFlipToBackBtn.focus();
-      }
-      if (heroCardFront) heroCardFront.setAttribute('aria-hidden', 'false');
-      if (heroCardBack) heroCardBack.setAttribute('aria-hidden', 'true');
-    }
-  };
-
-  const flipCard = flipHeroCard; // Alias for backward compatibility
-
-  if (heroFlipToBackBtn) {
-    heroFlipToBackBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      flipHeroCard(true);
-    });
+    return { setExpanded, isExpanded: () => card.classList.contains('is-expanded') };
   }
 
-  if (heroFlipToFrontBtn) {
-    heroFlipToFrontBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      flipHeroCard(false);
-    });
-  }
+  // 1. Hero Event Card
+  const heroCardController = initExpandableCard({
+    cardId: 'heroEventCard',
+    toggleBtnId: 'heroFlipToBackBtn',
+    panelId: 'heroExpandedDetails',
+    collapseBtnClass: '.hec-collapse-btn',
+    textClass: '.hec-expand-text',
+    defaultText: 'Know More',
+    expandedText: 'Show Less'
+  });
 
-  window.addEventListener('resize', () => {
-    if (heroEventCard && heroEventCard.classList.contains('is-flipped')) {
-      updateHeroCardHeight(true);
-    }
-  }, { passive: true });
+  // 2. Upcoming Event Card
+  const upcomingCardController = initExpandableCard({
+    cardId: 'upcomingEventCard',
+    toggleBtnId: 'upcomingAboutBtn',
+    panelId: 'upcomingExpandedDetails',
+    collapseBtnClass: '.efc-collapse-btn',
+    textClass: '.efc-expand-text',
+    defaultText: 'About Event',
+    expandedText: 'Show Less'
+  });
 
-  /* ─── UPCOMING EVENT FLIP CARD ─────────────────────────── */
-  const upcomingEventCard = document.getElementById('upcomingEventCard');
-  const upcomingAboutBtn = document.getElementById('upcomingAboutBtn');
-  const upcomingBackBtn = document.getElementById('upcomingBackBtn');
-  const upcomingCardFront = document.getElementById('upcomingCardFront');
-  const upcomingCardBack = document.getElementById('upcomingCardBack');
+  // 3. Past Event Card (Cloud Ignite)
+  const pastCardController = initExpandableCard({
+    cardId: 'pastEventCard',
+    toggleBtnId: 'pastAboutBtn',
+    panelId: 'pastExpandedDetails',
+    collapseBtnClass: '.efc-collapse-btn',
+    textClass: '.efc-expand-text',
+    defaultText: 'About Event',
+    expandedText: 'Show Less'
+  });
 
-  const flipUpcomingCard = (toBack = true) => {
-    if (!upcomingEventCard) return;
-
-    if (toBack) {
-      upcomingEventCard.classList.add('is-flipped');
-      if (upcomingAboutBtn) upcomingAboutBtn.setAttribute('aria-expanded', 'true');
-      if (upcomingCardFront) upcomingCardFront.setAttribute('aria-hidden', 'true');
-      if (upcomingCardBack) {
-        upcomingCardBack.setAttribute('aria-hidden', 'false');
-        if (upcomingBackBtn) upcomingBackBtn.focus();
-      }
-    } else {
-      upcomingEventCard.classList.remove('is-flipped');
-      if (upcomingAboutBtn) {
-        upcomingAboutBtn.setAttribute('aria-expanded', 'false');
-        upcomingAboutBtn.focus();
-      }
-      if (upcomingCardFront) upcomingCardFront.setAttribute('aria-hidden', 'false');
-      if (upcomingCardBack) upcomingCardBack.setAttribute('aria-hidden', 'true');
-    }
-  };
-
-  if (upcomingAboutBtn) {
-    upcomingAboutBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      flipUpcomingCard(true);
-    });
-  }
-
-  if (upcomingBackBtn) {
-    upcomingBackBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      flipUpcomingCard(false);
-    });
-  }
-
-  /* ─── PAST EVENT FLIP CARD (CLOUD IGNITE) ────────────────── */
-  const pastEventCard = document.getElementById('pastEventCard');
-  const pastAboutBtn = document.getElementById('pastAboutBtn');
-  const pastBackBtn = document.getElementById('pastBackBtn');
-  const pastCardFront = document.getElementById('pastCardFront');
-  const pastCardBack = document.getElementById('pastCardBack');
-
-  const flipPastCard = (toBack = true) => {
-    if (!pastEventCard) return;
-
-    if (toBack) {
-      pastEventCard.classList.add('is-flipped');
-      if (pastAboutBtn) pastAboutBtn.setAttribute('aria-expanded', 'true');
-      if (pastCardFront) pastCardFront.setAttribute('aria-hidden', 'true');
-      if (pastCardBack) {
-        pastCardBack.setAttribute('aria-hidden', 'false');
-        if (pastBackBtn) pastBackBtn.focus();
-      }
-    } else {
-      pastEventCard.classList.remove('is-flipped');
-      if (pastAboutBtn) {
-        pastAboutBtn.setAttribute('aria-expanded', 'false');
-        pastAboutBtn.focus();
-      }
-      if (pastCardFront) pastCardFront.setAttribute('aria-hidden', 'false');
-      if (pastCardBack) pastCardBack.setAttribute('aria-hidden', 'true');
-    }
-  };
-
-  if (pastAboutBtn) {
-    pastAboutBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      flipPastCard(true);
-    });
-  }
-
-  if (pastBackBtn) {
-    pastBackBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      flipPastCard(false);
-    });
-  }
-
-  // Prevent external links & buttons from bubbling to card flip or modal
+  // Prevent external links & buttons from bubbling to card expansion or modal
   const cardExternalLinks = document.querySelectorAll(
-    '.hec-register-btn, .uec-register-btn, .efc-register-btn, .hec-linkedin-btn, .uec-linkedin-btn, .speaker-box, .meetup-btn, .efc-back-actions a'
+    '.hec-register-btn, .uec-register-btn, .efc-register-btn, .hec-linkedin-btn-card, .speaker-box, .meetup-btn'
   );
   cardExternalLinks.forEach(link => {
     link.addEventListener('click', (e) => {
@@ -376,7 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.stopPropagation();
     }
     if (!posterModal) return;
-    
+
     if (e && e.currentTarget) {
       let img = null;
       if (e.currentTarget.classList.contains('maximize-btn')) {
@@ -384,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         img = e.currentTarget.querySelector('img');
       }
-      
+
       const modalImg = posterModal.querySelector('.pm-img');
       if (img && modalImg) {
         modalImg.src = img.src;
@@ -434,15 +359,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (posterModal && posterModal.classList.contains('active')) {
         closePosterModal();
       } else {
-        if (heroEventCard && heroEventCard.classList.contains('is-flipped')) {
-          flipHeroCard(false);
-        }
-        if (upcomingEventCard && upcomingEventCard.classList.contains('is-flipped')) {
-          flipUpcomingCard(false);
-        }
-        if (pastEventCard && pastEventCard.classList.contains('is-flipped')) {
-          flipPastCard(false);
-        }
+        if (heroCardController && heroCardController.isExpanded()) heroCardController.setExpanded(false);
+        if (upcomingCardController && upcomingCardController.isExpanded()) upcomingCardController.setExpanded(false);
+        if (pastCardController && pastCardController.isExpanded()) pastCardController.setExpanded(false);
       }
     }
   });
