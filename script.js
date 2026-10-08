@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ─── SMOOTH SCROLL REVEAL ANIMATIONS ─────────────────── */
   const revealElements = document.querySelectorAll(
-    '.sec-hdr, .card, .gallery-item, .contact-info, .contact-form-wrap, .join-panel, .hero-content, .hero-event-card'
+    '.sec-hdr, .card, .gallery-item, .contact-info, .contact-form-wrap, .join-panel, .hero-content, .hero-event-card, .event-flip-card'
   );
 
   revealElements.forEach(el => el.classList.add('reveal'));
@@ -163,16 +163,218 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ─── HERO EVENT FLIP CARD ─────────────────────────────── */
+  const heroEventCard = document.getElementById('heroEventCard');
+  const heroFlipToBackBtn = document.getElementById('heroFlipToBackBtn');
+  const heroFlipToFrontBtn = document.getElementById('heroFlipToFrontBtn');
+  const heroCardFront = document.getElementById('heroCardFront');
+  const heroCardBack = document.getElementById('heroCardBack');
+
+  const updateHeroCardHeight = (toBack) => {
+    if (!heroEventCard || !heroCardFront || !heroCardBack) return;
+    if (toBack) {
+      heroCardBack.style.position = 'static';
+      heroCardBack.style.height = 'auto';
+      const targetH = heroCardBack.offsetHeight;
+      heroCardBack.style.position = '';
+      heroCardBack.style.height = '';
+      heroEventCard.style.height = targetH + 'px';
+    } else {
+      heroEventCard.style.height = heroCardFront.offsetHeight + 'px';
+      setTimeout(() => {
+        if (heroEventCard && !heroEventCard.classList.contains('is-flipped')) {
+          heroEventCard.style.height = '';
+        }
+      }, 700);
+    }
+  };
+
+  const flipHeroCard = (toBack = true) => {
+    if (!heroEventCard) return;
+
+    if (toBack) {
+      updateHeroCardHeight(true);
+      heroEventCard.classList.add('is-flipped');
+      if (heroFlipToBackBtn) heroFlipToBackBtn.setAttribute('aria-expanded', 'true');
+      if (heroCardFront) heroCardFront.setAttribute('aria-hidden', 'true');
+      if (heroCardBack) {
+        heroCardBack.setAttribute('aria-hidden', 'false');
+        if (heroFlipToFrontBtn) heroFlipToFrontBtn.focus();
+      }
+    } else {
+      updateHeroCardHeight(false);
+      heroEventCard.classList.remove('is-flipped');
+      if (heroFlipToBackBtn) {
+        heroFlipToBackBtn.setAttribute('aria-expanded', 'false');
+        heroFlipToBackBtn.focus();
+      }
+      if (heroCardFront) heroCardFront.setAttribute('aria-hidden', 'false');
+      if (heroCardBack) heroCardBack.setAttribute('aria-hidden', 'true');
+    }
+  };
+
+  const flipCard = flipHeroCard; // Alias for backward compatibility
+
+  if (heroFlipToBackBtn) {
+    heroFlipToBackBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      flipHeroCard(true);
+    });
+  }
+
+  if (heroFlipToFrontBtn) {
+    heroFlipToFrontBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      flipHeroCard(false);
+    });
+  }
+
+  window.addEventListener('resize', () => {
+    if (heroEventCard && heroEventCard.classList.contains('is-flipped')) {
+      updateHeroCardHeight(true);
+    }
+  }, { passive: true });
+
+  /* ─── UPCOMING EVENT FLIP CARD ─────────────────────────── */
+  const upcomingEventCard = document.getElementById('upcomingEventCard');
+  const upcomingAboutBtn = document.getElementById('upcomingAboutBtn');
+  const upcomingBackBtn = document.getElementById('upcomingBackBtn');
+  const upcomingCardFront = document.getElementById('upcomingCardFront');
+  const upcomingCardBack = document.getElementById('upcomingCardBack');
+
+  const flipUpcomingCard = (toBack = true) => {
+    if (!upcomingEventCard) return;
+
+    if (toBack) {
+      upcomingEventCard.classList.add('is-flipped');
+      if (upcomingAboutBtn) upcomingAboutBtn.setAttribute('aria-expanded', 'true');
+      if (upcomingCardFront) upcomingCardFront.setAttribute('aria-hidden', 'true');
+      if (upcomingCardBack) {
+        upcomingCardBack.setAttribute('aria-hidden', 'false');
+        if (upcomingBackBtn) upcomingBackBtn.focus();
+      }
+    } else {
+      upcomingEventCard.classList.remove('is-flipped');
+      if (upcomingAboutBtn) {
+        upcomingAboutBtn.setAttribute('aria-expanded', 'false');
+        upcomingAboutBtn.focus();
+      }
+      if (upcomingCardFront) upcomingCardFront.setAttribute('aria-hidden', 'false');
+      if (upcomingCardBack) upcomingCardBack.setAttribute('aria-hidden', 'true');
+    }
+  };
+
+  if (upcomingAboutBtn) {
+    upcomingAboutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      flipUpcomingCard(true);
+    });
+  }
+
+  if (upcomingBackBtn) {
+    upcomingBackBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      flipUpcomingCard(false);
+    });
+  }
+
+  /* ─── PAST EVENT FLIP CARD (CLOUD IGNITE) ────────────────── */
+  const pastEventCard = document.getElementById('pastEventCard');
+  const pastAboutBtn = document.getElementById('pastAboutBtn');
+  const pastBackBtn = document.getElementById('pastBackBtn');
+  const pastCardFront = document.getElementById('pastCardFront');
+  const pastCardBack = document.getElementById('pastCardBack');
+
+  const flipPastCard = (toBack = true) => {
+    if (!pastEventCard) return;
+
+    if (toBack) {
+      pastEventCard.classList.add('is-flipped');
+      if (pastAboutBtn) pastAboutBtn.setAttribute('aria-expanded', 'true');
+      if (pastCardFront) pastCardFront.setAttribute('aria-hidden', 'true');
+      if (pastCardBack) {
+        pastCardBack.setAttribute('aria-hidden', 'false');
+        if (pastBackBtn) pastBackBtn.focus();
+      }
+    } else {
+      pastEventCard.classList.remove('is-flipped');
+      if (pastAboutBtn) {
+        pastAboutBtn.setAttribute('aria-expanded', 'false');
+        pastAboutBtn.focus();
+      }
+      if (pastCardFront) pastCardFront.setAttribute('aria-hidden', 'false');
+      if (pastCardBack) pastCardBack.setAttribute('aria-hidden', 'true');
+    }
+  };
+
+  if (pastAboutBtn) {
+    pastAboutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      flipPastCard(true);
+    });
+  }
+
+  if (pastBackBtn) {
+    pastBackBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      flipPastCard(false);
+    });
+  }
+
+  // Prevent external links & buttons from bubbling to card flip or modal
+  const cardExternalLinks = document.querySelectorAll(
+    '.hec-register-btn, .uec-register-btn, .efc-register-btn, .hec-linkedin-btn, .uec-linkedin-btn, .speaker-box, .meetup-btn, .efc-back-actions a'
+  );
+  cardExternalLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  });
+
+  // Dynamic Event Status based on Target Date (10 Oct 2026 4:00 PM IST)
+  const updateEventStatus = () => {
+    const now = new Date();
+    const eventStart = new Date('2026-10-10T16:00:00+05:30');
+    const eventEnd = new Date('2026-10-10T18:00:00+05:30');
+    const statusTag = document.getElementById('heroEventStatusTag');
+    const statusText = document.getElementById('heroStatusText');
+
+    if (!statusTag || !statusText) return;
+
+    if (now > eventEnd) {
+      statusTag.classList.remove('premium-tag');
+      statusTag.classList.add('tag-completed');
+      statusText.textContent = 'EVENT COMPLETED';
+      const dot = statusTag.querySelector('.live-indicator-dot');
+      if (dot) dot.style.display = 'none';
+    } else if (now >= eventStart && now <= eventEnd) {
+      statusText.textContent = 'HAPPENING NOW';
+    } else {
+      statusText.textContent = 'UPCOMING EVENT';
+    }
+  };
+
+  updateEventStatus();
+
   /* ─── POSTER LIGHTBOX MODAL ────────────────────────────── */
   const posterModal = document.getElementById('posterModal');
-  const openPosterArrow = document.getElementById('openPosterArrow');
-  const heroInviteBox = document.getElementById('heroInviteBox');
   const heroImgWrapper = document.getElementById('heroImgWrapper');
+  const upcomingEventImgWrap = document.getElementById('upcomingEventImgWrap');
+  const pastEventImgWrap = document.getElementById('pastEventImgWrap');
   const posterModalClose = document.getElementById('posterModalClose');
   const posterModalBackdrop = document.getElementById('posterModalBackdrop');
 
   const openPosterModal = (e) => {
-    if (e) e.preventDefault();
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     if (!posterModal) return;
     
     if (e && e.currentTarget) {
@@ -202,9 +404,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   };
 
-  if (openPosterArrow) openPosterArrow.addEventListener('click', openPosterModal);
-  if (heroInviteBox) heroInviteBox.addEventListener('click', openPosterModal);
-  
+  // Wire up hero poster & event wrappers
+  if (heroImgWrapper) heroImgWrapper.addEventListener('click', openPosterModal);
+  if (upcomingEventImgWrap) upcomingEventImgWrap.addEventListener('click', openPosterModal);
+  if (pastEventImgWrap) pastEventImgWrap.addEventListener('click', openPosterModal);
+
   // Prevent modal from overriding Meetup link
   const meetupBtns = document.querySelectorAll('.meetup-btn');
   meetupBtns.forEach(btn => {
@@ -212,7 +416,6 @@ document.addEventListener('DOMContentLoaded', () => {
       e.stopPropagation();
     });
   });
-  if (heroImgWrapper) heroImgWrapper.addEventListener('click', openPosterModal);
 
   // Ensure all maximize buttons open the modal
   const maxBtns = document.querySelectorAll('.maximize-btn');
@@ -222,12 +425,25 @@ document.addEventListener('DOMContentLoaded', () => {
       openPosterModal(e);
     });
   });
+
   if (posterModalClose) posterModalClose.addEventListener('click', closePosterModal);
   if (posterModalBackdrop) posterModalBackdrop.addEventListener('click', closePosterModal);
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && posterModal && posterModal.classList.contains('active')) {
-      closePosterModal();
+    if (e.key === 'Escape') {
+      if (posterModal && posterModal.classList.contains('active')) {
+        closePosterModal();
+      } else {
+        if (heroEventCard && heroEventCard.classList.contains('is-flipped')) {
+          flipHeroCard(false);
+        }
+        if (upcomingEventCard && upcomingEventCard.classList.contains('is-flipped')) {
+          flipUpcomingCard(false);
+        }
+        if (pastEventCard && pastEventCard.classList.contains('is-flipped')) {
+          flipPastCard(false);
+        }
+      }
     }
   });
 });
