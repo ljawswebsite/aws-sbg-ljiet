@@ -273,9 +273,9 @@
 
             <div class="hec-body">
               <div class="hec-top">
-                <span class="tag premium-tag" id="heroEventStatusTag">
-                  <span class="live-indicator-dot" aria-hidden="true"></span>
-                  <span id="heroStatusText">UPCOMING EVENT</span>
+                <span class="tag tag-completed" id="heroEventStatusTag">
+                  <span class="live-indicator-dot" aria-hidden="true" style="display: none;"></span>
+                  <span id="heroStatusText">EVENT COMPLETED</span>
                 </span>
                 <span class="hec-format-tag">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
@@ -310,8 +310,8 @@
               </p>
 
               <div class="hec-footer-actions hec-stacked-actions">
-                <a href="https://www.meetup.com/aws-sbg-at-lj-institute-of-engineering-and-technology/" target="_blank" rel="noopener noreferrer" class="btn btn-primary hec-cta-btn hec-register-btn" id="heroRegisterBtn">
-                  Register Now
+                <a href="#events" class="btn btn-primary hec-cta-btn hec-register-btn" id="heroRegisterBtn">
+                  Explore Events
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M5 12h14M13 5l7 7-7 7"/>
                   </svg>
@@ -333,16 +333,16 @@
 
                   <div class="hec-expanded-header">
                     <div class="hec-eyebrow-row">
-                      <span class="hec-eyebrow">YOU&apos;RE INVITED!</span>
-                      <span class="tag premium-tag-subtle">Online Session</span>
+                      <span class="hec-eyebrow">SESSION SUMMARY</span>
+                      <span class="tag" style="background: #E2E8F0; color: #475569; font-weight: 700; font-size: 0.72rem; padding: 3px 9px; border-radius: 12px; font-family: var(--font-mono); text-transform: uppercase;">Completed</span>
                     </div>
                     <p class="hec-expanded-desc">
-                      Ready to take your first step towards AWS Certification? Join us for an interactive session where we&apos;ll explore AWS Certification, preparation strategies, career opportunities, and the journey towards the AWS Golden Jacket.
+                      AWS Student Builder Group successfully concluded AWS Certification: Your Roadmap to the Golden Jacket. Thank you to everyone who joined us for live AWS certification guidance and interactive Q&amp;A.
                     </p>
                   </div>
 
                   <div class="hec-topics-section">
-                    <div class="hec-section-kicker">What we&apos;ll explore</div>
+                    <div class="hec-section-kicker">WHAT WAS COVERED</div>
                     <ul class="hec-topics-list">
                       <li>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -374,6 +374,13 @@
                         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                       </svg>
                       <span class="linkedin-btn-label">LinkedIn &rarr; Ankit Haseeja</span>
+                    </a>
+                  </div>
+
+                  <div style="margin-bottom: 12px;">
+                    <a href="#gallery" class="btn btn-outline" onclick="openAlbum('event2');" style="width: 100%; justify-content: center; font-size: 0.88rem; padding: 9px 16px;">
+                      View Event Gallery
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
                     </a>
                   </div>
 
@@ -473,13 +480,13 @@
       <div class="container">
         <div class="sec-hdr">
           <span class="kicker">Events</span>
-          <h2>Upcoming workshops &amp; community sessions.</h2>
+          <h2>Workshops &amp; community sessions.</h2>
           <p style="margin-top: 0.75rem; color: var(--muted); font-size: 1.05rem;">Hands-on cloud architecture sessions,
             certification tracks, and tech speaker series.</p>
         </div>
         <div class="events-grid">
-          <!-- ── CARD 1: UPCOMING EVENT (AWS Certification) ────────── -->
-          <article class="card event-card premium-event-card upcoming-event-card" id="upcomingEventCard">
+          <!-- ── CARD 1: COMPLETED EVENT (AWS Certification) ────────── -->
+          <article class="card event-card premium-event-card past-event-card" id="upcomingEventCard">
             <div class="event-img" id="upcomingEventImgWrap" title="Click to view full poster" style="cursor: pointer;">
               <img class="img-event" src="images/aws_certification_roadmap_image.jpeg" alt="AWS Certification: Your Roadmap to the Golden Jacket event poster" width="400"
                 height="300" loading="lazy" style="object-fit: cover; object-position: center top;">
@@ -491,21 +498,15 @@
             </div>
             <div class="event-body efc-body">
               <div class="event-meta-row">
-                <span class="tag premium-tag">Upcoming Event</span>
+                <span class="tag" style="background: #E2E8F0; color: #475569; font-weight: 700; font-size: 0.75rem; padding: 4px 10px; border-radius: 20px; text-transform: uppercase;">Completed</span>
                 <span class="hec-date">Saturday, 10th October 2026</span>
               </div>
               <h3>AWS Certification: Your Roadmap to the Golden Jacket</h3>
               <p class="efc-desc">
-                Ready to take your first step towards AWS Certification? Join us for an interactive session covering certification, preparation, career growth, and the Golden Jacket journey.
+                AWS Student Builder Group successfully concluded AWS Certification: Your Roadmap to the Golden Jacket. Hands-on AWS certification roadmap, preparation strategies, and career growth.
               </p>
 
               <div class="efc-front-actions">
-                <a href="https://www.meetup.com/aws-sbg-at-lj-institute-of-engineering-and-technology/" target="_blank" rel="noopener noreferrer" class="btn btn-primary efc-btn efc-register-btn" id="upcomingRegisterBtn">
-                  Register Now
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M5 12h14M13 5l7 7-7 7"/>
-                  </svg>
-                </a>
                 <button type="button" class="btn btn-outline efc-btn efc-expand-btn" id="upcomingAboutBtn" aria-expanded="false" aria-controls="upcomingExpandedDetails">
                   <span class="efc-expand-text">About Event</span>
                   <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -529,16 +530,16 @@
 
                   <div class="efc-back-header">
                     <div class="hec-eyebrow-row">
-                      <span class="hec-eyebrow">YOU&apos;RE INVITED!</span>
-                      <span class="tag premium-tag-subtle">Online Session</span>
+                      <span class="hec-eyebrow">SESSION SUMMARY</span>
+                      <span class="tag" style="background: #E2E8F0; color: #475569; font-weight: 700; font-size: 0.72rem; padding: 3px 9px; border-radius: 12px; font-family: var(--font-mono); text-transform: uppercase;">Completed</span>
                     </div>
                     <p class="efc-back-desc">
-                      Ready to take your first step towards AWS Certification? Join us for an interactive session covering:
+                      AWS Student Builder Group successfully concluded AWS Certification: Your Roadmap to the Golden Jacket. Thank you to everyone who joined us for live AWS certification guidance and interactive Q&amp;A.
                     </p>
                   </div>
 
                   <div class="uec-topics-section">
-                    <div class="hec-section-kicker">WHAT WE&apos;LL EXPLORE</div>
+                    <div class="hec-section-kicker">WHAT WAS COVERED</div>
                     <ul class="hec-topics-list uec-topics-list">
                       <li>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -570,6 +571,13 @@
                         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                       </svg>
                       <span class="linkedin-btn-label">LinkedIn &rarr; Ankit Haseeja</span>
+                    </a>
+                  </div>
+
+                  <div style="margin-bottom: 12px;">
+                    <a href="#gallery" class="btn btn-outline" onclick="openAlbum('event2');" style="width: 100%; justify-content: center; font-size: 0.88rem; padding: 9px 16px;">
+                      View Event Gallery
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
                     </a>
                   </div>
 
@@ -683,7 +691,7 @@
                   </div>
 
                   <div style="margin-bottom: 12px;">
-                    <a href="#gallery" class="btn btn-outline" style="width: 100%; justify-content: center; font-size: 0.88rem; padding: 9px 16px;">
+                    <a href="#gallery" class="btn btn-outline" onclick="openAlbum('event1');" style="width: 100%; justify-content: center; font-size: 0.88rem; padding: 9px 16px;">
                       View Event Gallery
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
                     </a>
@@ -731,9 +739,36 @@
         </div>
         <div class="gallery-albums-container"
           style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
-          <!-- Album Card -->
-          <article class="card" id="event1-album-card"
-            style="width: 100%; max-width: 400px; padding: 1.25rem; margin: 0 auto;">
+          <!-- Album 2 Card (AWS Certification) -->
+          <article class="card gallery-album-card" id="event2-album-card"
+            style="width: 100%; max-width: 400px; padding: 1.25rem;">
+            <div
+              style="position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; margin-bottom: 1.25rem; background: #000;">
+              <img src="images/event2/p1.png" alt="AWS Certification: Your Roadmap to the Golden Jacket Cover" loading="lazy"
+                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: opacity 0.3s;"
+                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+              <div
+                style="position: absolute; bottom: 12px; right: 12px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; backdrop-filter: blur(4px);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"
+                  style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px; margin-top: -2px;">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" />
+                </svg>3 Photos
+              </div>
+            </div>
+            <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">AWS Certification: Roadmap to Golden Jacket</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.4;">Interactive online session on AWS certification tracks, preparation strategies, and the Golden Jacket journey.</p>
+            <button class="btn btn-primary" style="width: 100%; justify-content: center;"
+              onclick="openAlbum('event2');">
+              Show all images
+            </button>
+          </article>
+
+          <!-- Album 1 Card (Session 1: Cloud Ignite) -->
+          <article class="card gallery-album-card" id="event1-album-card"
+            style="width: 100%; max-width: 400px; padding: 1.25rem;">
             <div
               style="position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; margin-bottom: 1.25rem; background: #000;">
               <img src="images/event1/IMG_7735.jpg" alt="Session 1: Cloud Ignite Cover" loading="lazy"
@@ -754,18 +789,68 @@
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.4;">Inaugural
               launch featuring AWS cloud fundamentals and hands-on guidance.</p>
             <button class="btn btn-primary" style="width: 100%; justify-content: center;"
-              onclick="document.getElementById('event1-album-card').style.display='none'; document.getElementById('event1-gallery-view').style.display='block';">
+              onclick="openAlbum('event1');">
               Show all images
             </button>
           </article>
 
-          <!-- The Expanded Grid (Hidden Initially) -->
-          <div id="event1-gallery-view" style="display: none; width: 100%;">
+          <!-- The Expanded Grid for Event 2 (Hidden Initially) -->
+          <div id="event2-gallery-view" class="gallery-expanded-view" style="display: none; width: 100%;">
+            <div
+              style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+              <h3 style="margin: 0; font-size: 1.5rem;">AWS Certification: Your Roadmap to the Golden Jacket</h3>
+              <button class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;"
+                onclick="closeAlbums();">
+                &larr; Back to Albums
+              </button>
+            </div>
+            <div class="gallery-grid">
+              <figure class="gallery-item">
+                <div class="g-img">
+                  <img src="images/event2/p1.png" alt="AWS Certification: Your Roadmap to the Golden Jacket - Photo 1" width="400" height="300"
+                    loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+                  <button class="maximize-btn" aria-label="View photo full screen"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+                    </svg></button>
+                </div>
+                <figcaption class="gallery-caption">AWS Certification Roadmap</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <div class="g-img">
+                  <img src="images/event2/p2.png" alt="AWS Certification: Your Roadmap to the Golden Jacket - Photo 2" width="400" height="300"
+                    loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+                  <button class="maximize-btn" aria-label="View photo full screen"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+                    </svg></button>
+                </div>
+                <figcaption class="gallery-caption">AWS Golden Jacket Session</figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <div class="g-img">
+                  <img src="images/event2/p3.png" alt="AWS Certification: Your Roadmap to the Golden Jacket - Photo 3" width="400" height="300"
+                    loading="lazy" style="object-fit: cover; width: 100%; height: 100%;">
+                  <button class="maximize-btn" aria-label="View photo full screen"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+                    </svg></button>
+                </div>
+                <figcaption class="gallery-caption">Interactive Community Q&amp;A</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <!-- The Expanded Grid for Event 1 (Hidden Initially) -->
+          <div id="event1-gallery-view" class="gallery-expanded-view" style="display: none; width: 100%;">
             <div
               style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
               <h3 style="margin: 0; font-size: 1.5rem;">Session 1: Cloud Ignite</h3>
               <button class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;"
-                onclick="document.getElementById('event1-gallery-view').style.display='none'; document.getElementById('event1-album-card').style.display='block';">
+                onclick="closeAlbums();">
                 &larr; Back to Albums
               </button>
             </div>
