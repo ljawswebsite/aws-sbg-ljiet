@@ -219,18 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return { setExpanded, isExpanded: () => card.classList.contains('is-expanded') };
   }
 
-  // 1. Hero Event Card
-  const heroCardController = initExpandableCard({
-    cardId: 'heroEventCard',
-    toggleBtnId: 'heroFlipToBackBtn',
-    panelId: 'heroExpandedDetails',
-    collapseBtnClass: '.hec-collapse-btn',
-    textClass: '.hec-expand-text',
-    defaultText: 'Know More',
-    expandedText: 'Show Less'
-  });
-
-  // 2. Upcoming Event Card
+  // 1. Upcoming Event Card (AWS Certification Roadmap)
   const upcomingCardController = initExpandableCard({
     cardId: 'upcomingEventCard',
     toggleBtnId: 'upcomingAboutBtn',
@@ -241,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
     expandedText: 'Show Less'
   });
 
-  // 3. Past Event Card (Cloud Ignite)
+  // 2. Past Event Card (Cloud Ignite)
   const pastCardController = initExpandableCard({
     cardId: 'pastEventCard',
     toggleBtnId: 'pastAboutBtn',
@@ -254,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Prevent external links & buttons from bubbling to card expansion or modal
   const cardExternalLinks = document.querySelectorAll(
-    '.hec-register-btn, .uec-register-btn, .efc-register-btn, .hec-linkedin-btn-card, .speaker-box, .meetup-btn'
+    '.uec-register-btn, .efc-register-btn, .hec-linkedin-btn-card, .speaker-box, .meetup-btn'
   );
   cardExternalLinks.forEach(link => {
     link.addEventListener('click', (e) => {
@@ -262,45 +251,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Dynamic Event Status based on Target Date (10 Oct 2026 4:00 PM IST)
-  const updateEventStatus = () => {
-    const now = new Date();
-    const eventStart = new Date('2026-10-10T16:00:00+05:30');
-    const eventEnd = new Date('2026-10-10T18:00:00+05:30');
-    const statusTag = document.getElementById('heroEventStatusTag');
-    const statusText = document.getElementById('heroStatusText');
-    const heroRegisterBtn = document.getElementById('heroRegisterBtn');
-
-    if (!statusTag || !statusText) return;
-
-    if (now > eventEnd) {
-      statusTag.classList.remove('premium-tag');
-      statusTag.classList.add('tag-completed');
-      statusText.textContent = 'EVENT COMPLETED';
-      const dot = statusTag.querySelector('.live-indicator-dot');
-      if (dot) dot.style.display = 'none';
-
-      if (heroRegisterBtn) {
-        heroRegisterBtn.href = '#events';
-        heroRegisterBtn.removeAttribute('target');
-        heroRegisterBtn.removeAttribute('rel');
-        heroRegisterBtn.innerHTML = `Explore Events
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M5 12h14M13 5l7 7-7 7"/>
-          </svg>`;
-      }
-    } else if (now >= eventStart && now <= eventEnd) {
-      statusText.textContent = 'HAPPENING NOW';
-    } else {
-      statusText.textContent = 'UPCOMING EVENT';
-    }
-  };
-
-  updateEventStatus();
-
   /* ─── POSTER LIGHTBOX MODAL ────────────────────────────── */
   const posterModal = document.getElementById('posterModal');
-  const heroImgWrapper = document.getElementById('heroImgWrapper');
   const upcomingEventImgWrap = document.getElementById('upcomingEventImgWrap');
   const pastEventImgWrap = document.getElementById('pastEventImgWrap');
   const posterModalClose = document.getElementById('posterModalClose');
@@ -341,7 +293,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Wire up hero poster & event wrappers
-  if (heroImgWrapper) heroImgWrapper.addEventListener('click', openPosterModal);
   if (upcomingEventImgWrap) upcomingEventImgWrap.addEventListener('click', openPosterModal);
   if (pastEventImgWrap) pastEventImgWrap.addEventListener('click', openPosterModal);
 
@@ -370,26 +321,50 @@ document.addEventListener('DOMContentLoaded', () => {
       if (posterModal && posterModal.classList.contains('active')) {
         closePosterModal();
       } else {
-        if (heroCardController && heroCardController.isExpanded()) heroCardController.setExpanded(false);
         if (upcomingCardController && upcomingCardController.isExpanded()) upcomingCardController.setExpanded(false);
         if (pastCardController && pastCardController.isExpanded()) pastCardController.setExpanded(false);
       }
     }
   });
 
-  /* ─── GALLERY ALBUM SWITCHER ────────────────────────────── */
-  window.openAlbum = function(albumId) {
+  /* ─── GALLERY ALBUM SWITCHER WITH HASH NAVIGATION & SCROLL ────────────────────────────── */
+  window.openAlbum = function(albumId, pushHistory = true) {
     document.querySelectorAll('.gallery-album-card').forEach(function(el) { el.style.display = 'none'; });
     document.querySelectorAll('.gallery-expanded-view').forEach(function(el) { el.style.display = 'none'; });
     var target = document.getElementById(albumId + '-gallery-view');
     if (target) {
       target.style.display = 'block';
+      if (pushHistory && window.location.hash !== '#' + albumId) {
+        history.pushState({ album: albumId }, '', '#' + albumId);
+      }
+      const gallerySection = document.getElementById('gallery');
+      if (gallerySection) {
+        gallerySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   };
 
-  window.closeAlbums = function() {
+  window.closeAlbums = function(updateHistory = true) {
     document.querySelectorAll('.gallery-album-card').forEach(function(el) { el.style.display = 'block'; });
     document.querySelectorAll('.gallery-expanded-view').forEach(function(el) { el.style.display = 'none'; });
+    if (updateHistory && (window.location.hash === '#event1' || window.location.hash === '#event2')) {
+      history.pushState(null, '', '#gallery');
+    }
   };
+
+  // Support browser Back/Forward navigation for gallery albums
+  window.addEventListener('popstate', () => {
+    const hash = window.location.hash;
+    if (hash === '#event1' || hash === '#event2') {
+      window.openAlbum(hash.replace('#', ''), false);
+    } else {
+      window.closeAlbums(false);
+    }
+  });
+
+  // Check URL hash on initial page load (e.g. deep link #event2)
+  if (window.location.hash === '#event1' || window.location.hash === '#event2') {
+    window.openAlbum(window.location.hash.replace('#', ''), false);
+  }
 });
 
