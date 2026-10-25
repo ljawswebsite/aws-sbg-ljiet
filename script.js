@@ -412,9 +412,21 @@ document.addEventListener('DOMContentLoaded', () => {
         pmImg.alt = img.alt || 'Gallery photo';
       }
       if (pmBadge && badge) pmBadge.textContent = badge.textContent.trim();
-      if (pmHeading && title) pmHeading.textContent = title.textContent.trim();
+      if (pmHeading) {
+        if (title) {
+          pmHeading.textContent = title.textContent.trim();
+        } else if (badge) {
+          pmHeading.textContent = badge.textContent.trim();
+        } else {
+          pmHeading.textContent = 'Photo Preview';
+        }
+      }
       if (pmCounter) pmCounter.textContent = `${currentLightboxIndex + 1} / ${visibleCards.length}`;
-      if (pmCaption) pmCaption.textContent = meta ? meta.textContent.trim().replace(/\s+/g, ' ') : '';
+      if (pmCaption) {
+        const capText = meta ? meta.textContent.trim().replace(/\s+/g, ' ') : '';
+        pmCaption.textContent = capText;
+        pmCaption.style.display = capText ? 'block' : 'none';
+      }
 
       if (pmNavPrev && pmNavNext) {
         const hasMultiple = visibleCards.length > 1;
