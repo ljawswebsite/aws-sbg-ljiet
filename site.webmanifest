@@ -1,0 +1,20 @@
+{
+  "name": "AWS Student Builder Group | LJIET Chapter",
+  "short_name": "AWS SBG LJIET",
+  "icons": [
+    {
+      "src": "images/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/aws-sbg-ljiet/",
+  "display": "standalone",
+  "background_color": "#0a101a",
+  "theme_color": "#232F3E"
+}
