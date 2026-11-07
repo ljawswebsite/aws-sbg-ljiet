@@ -219,6 +219,17 @@ document.addEventListener('DOMContentLoaded', () => {
     return { setExpanded, isExpanded: () => card.classList.contains('is-expanded') };
   }
 
+  // 0. Event 3 Card (Netflix N Build)
+  const event3CardController = initExpandableCard({
+    cardId: 'event3Card',
+    toggleBtnId: 'event3AboutBtn',
+    panelId: 'event3ExpandedDetails',
+    collapseBtnClass: '.efc-collapse-btn',
+    textClass: '.efc-expand-text',
+    defaultText: 'About Event',
+    expandedText: 'Show Less'
+  });
+
   // 1. Upcoming Event Card (AWS Certification Roadmap)
   const upcomingCardController = initExpandableCard({
     cardId: 'upcomingEventCard',
@@ -363,14 +374,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Hash & history listener
   window.addEventListener('popstate', () => {
     const hash = window.location.hash;
-    if (hash === '#event1' || hash === '#event2') {
+    if (hash === '#event1' || hash === '#event2' || hash === '#event3') {
       setGalleryFilter(hash.replace('#', ''), false);
     } else {
       setGalleryFilter('all', false);
     }
   });
 
-  if (window.location.hash === '#event1' || window.location.hash === '#event2') {
+  if (window.location.hash === '#event1' || window.location.hash === '#event2' || window.location.hash === '#event3') {
     setGalleryFilter(window.location.hash.replace('#', ''), false);
   } else {
     updateCarouselState();
@@ -378,6 +389,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ─── ENHANCED POSTER & GALLERY LIGHTBOX MODAL ─────────── */
   const posterModal = document.getElementById('posterModal');
+  const event3ImgWrap = document.getElementById('event3ImgWrap');
   const upcomingEventImgWrap = document.getElementById('upcomingEventImgWrap');
   const pastEventImgWrap = document.getElementById('pastEventImgWrap');
   const posterModalClose = document.getElementById('posterModalClose');
@@ -517,6 +529,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Wire up hero/completed event wrappers
+  if (event3ImgWrap) {
+    event3ImgWrap.addEventListener('click', (e) => {
+      e.preventDefault();
+      openSinglePosterLightbox(
+        'images/event3/poster.jpg',
+        'Netflix N Build: The AWS Architecture Behind Every Binge',
+        'Netflix N Build',
+        'Architecture Deep Dive'
+      );
+    });
+  }
+
   if (upcomingEventImgWrap) {
     upcomingEventImgWrap.addEventListener('click', (e) => {
       e.preventDefault();
@@ -548,6 +572,16 @@ document.addEventListener('DOMContentLoaded', () => {
   maxBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
+      const card = btn.closest('.event-card');
+      if (card && card.id === 'event3Card') {
+        openSinglePosterLightbox(
+          'images/event3/poster.jpg',
+          'Netflix N Build: The AWS Architecture Behind Every Binge',
+          'Netflix N Build',
+          'Architecture Deep Dive'
+        );
+        return;
+      }
       const img = btn.closest('.event-img')?.querySelector('img');
       if (img) {
         openSinglePosterLightbox(img.src, img.alt, 'Event Poster', 'Official');
