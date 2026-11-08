@@ -3511,10 +3511,6 @@ p {
   transform: scale(1.03);
 }
 
-#event3Card:hover .event-img img {
-  transform: none;
-}
-
 /* ─── POSTER LIGHTBOX MODAL ────────────────────────────────── */
 .hec-poster-wrapper,
 .hec-img-wrapper,
